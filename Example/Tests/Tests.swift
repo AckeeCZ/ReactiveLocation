@@ -1,6 +1,5 @@
 import UIKit
 import XCTest
-import ReactiveLocation
 
 class Tests: XCTestCase {
     
