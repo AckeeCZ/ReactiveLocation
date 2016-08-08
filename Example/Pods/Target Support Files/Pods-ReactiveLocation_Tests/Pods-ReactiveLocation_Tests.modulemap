@@ -1,0 +1,6 @@
+framework module Pods_ReactiveLocation_Tests {
+  umbrella header "Pods-ReactiveLocation_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
