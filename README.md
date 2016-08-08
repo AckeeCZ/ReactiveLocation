@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 [![Platform](https://img.shields.io/cocoapods/p/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 
+ReactiveCocoa wrapper for CLLocationManager. 
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
