@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveLocation
 
 class ViewController: UIViewController {
 
@@ -20,5 +21,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-}
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
 
+        lm.authorizeAction.apply(.WhenInUse).start()
+    }
+
+    let lm = LocationManager()
+
+}
