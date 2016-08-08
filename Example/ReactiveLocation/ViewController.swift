@@ -23,10 +23,7 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-
-        lm.authorizeAction.apply(.WhenInUse).start()
     }
 
-    let lm = LocationManager()
 
 }

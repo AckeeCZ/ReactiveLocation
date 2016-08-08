@@ -36,12 +36,12 @@ public enum LocationAuthorizationError: ErrorType {
     case Restricted
 }
 public protocol LocationManaging {
-    func locationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError>
-    func singleLocationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError>
-    func visitProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLVisit, LocationError>
-    func regionProducer(region: CLRegion, managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<RegionState, LocationError>
-    func headingProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLHeading, LocationError>
-    var authorizeAction: Action<LocationAuthorizationLevel, LocationAuthorizationLevel, LocationAuthorizationError> { get }
+    static func locationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError>
+    static func singleLocationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError>
+    static func visitProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLVisit, LocationError>
+    static func regionProducer(region: CLRegion, managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<RegionState, LocationError>
+    static func headingProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLHeading, LocationError>
+    static var authorizeAction: Action<LocationAuthorizationLevel, LocationAuthorizationLevel, LocationAuthorizationError> { get }
 }
 
 extension CLLocationManager {
@@ -72,8 +72,8 @@ public class ReactiveLocation: LocationManaging {
 
     public init() { }
 
-    public func locationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError> {
-        let manager = locationManagerFactory(kCLLocationAccuracyBest)
+    static public func locationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError> {
+        let manager = locationManagerFactory()
         if let managerFactory = managerFactory {
             managerFactory(manager)
         }
@@ -86,9 +86,9 @@ public class ReactiveLocation: LocationManaging {
         })
     }
 
-    public func singleLocationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError> {
+    static public func singleLocationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError> {
 
-        let manager = locationManagerFactory(kCLLocationAccuracyBest)
+        let manager = locationManagerFactory()
         if let managerFactory = managerFactory {
             managerFactory(manager)
         }
@@ -102,8 +102,8 @@ public class ReactiveLocation: LocationManaging {
         })
     }
 
-    public func headingProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLHeading, LocationError> {
-        let manager = locationManagerFactory(kCLLocationAccuracyBest)
+    static public func headingProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLHeading, LocationError> {
+        let manager = locationManagerFactory()
         if let managerFactory = managerFactory {
             managerFactory(manager)
         }
@@ -116,8 +116,8 @@ public class ReactiveLocation: LocationManaging {
         })
     }
 
-    public func visitProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLVisit, LocationError> {
-        let manager = locationManagerFactory(kCLLocationAccuracyBest)
+    static public func visitProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLVisit, LocationError> {
+        let manager = locationManagerFactory()
         if let managerFactory = managerFactory {
             managerFactory(manager)
         }
@@ -130,8 +130,8 @@ public class ReactiveLocation: LocationManaging {
         })
     }
 
-    public func regionProducer(region: CLRegion, managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<RegionState, LocationError> {
-        let manager = locationManagerFactory(kCLLocationAccuracyBest)
+    static public func regionProducer(region: CLRegion, managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<RegionState, LocationError> {
+        let manager = locationManagerFactory()
         if let managerFactory = managerFactory {
             managerFactory(manager)
         }
@@ -144,10 +144,9 @@ public class ReactiveLocation: LocationManaging {
         })
     }
 
-    // TODO: make this static to prevent racecondition which can happen when multiple instances of LocationManager affect the same static 'CLLocationManager.authorizationStatus'
-    public lazy var authorizeAction: Action<LocationAuthorizationLevel, LocationAuthorizationLevel, LocationAuthorizationError> = { [unowned self] in
+     static public let authorizeAction: Action<LocationAuthorizationLevel, LocationAuthorizationLevel, LocationAuthorizationError> =
 
-        return Action { [unowned self] targetLevel in
+         Action {  targetLevel in
             let translateStatus: CLAuthorizationStatus -> SignalProducer <LocationAuthorizationLevel, LocationAuthorizationError> = { status in
                 if let level = LocationAuthorizationLevel(status: status)
                 where level >= targetLevel {
@@ -163,7 +162,7 @@ public class ReactiveLocation: LocationManaging {
                 }
             }
 
-            let cl = self.locationManagerFactory(kCLLocationAccuracyBest)
+            let cl = ReactiveLocation.locationManagerFactory()
             return SignalProducer<CLAuthorizationStatus, NoError> { sink, dis in
 
                 sink.sendNext(CLLocationManager.authorizationStatus()); sink.sendCompleted()
@@ -174,7 +173,7 @@ public class ReactiveLocation: LocationManaging {
                         return cl.delegateObject!.rac_signalForSelector(#selector(CLLocationManagerDelegate.locationManager(_: didChangeAuthorizationStatus:)), fromProtocol: CLLocationManagerDelegate.self)
                             .toSignalProducer()
                             .flatMapError { _ in SignalProducer.empty }
-                            .on(started: { [unowned self] in
+                            .on(started: { 
                                 switch targetLevel {
                                 case .Always: cl.requestAlwaysAuthorization()
                                 case .WhenInUse: cl.requestWhenInUseAuthorization()
@@ -191,7 +190,7 @@ public class ReactiveLocation: LocationManaging {
                     }
             }
         }
-    }()
+    
 
     // MARK: Internal
 
@@ -225,7 +224,7 @@ public class ReactiveLocation: LocationManaging {
         }
     }
 
-    private func errorSignal<T>(delegateObject: NSObject) -> SignalProducer<T, LocationError> {
+    static private func errorSignal<T>(delegateObject: NSObject) -> SignalProducer<T, LocationError> {
         return delegateObject.rac_signalForSelector(#selector(CLLocationManagerDelegate.locationManager(_: didFailWithError:)), fromProtocol: CLLocationManagerDelegate.self)
             .toSignalProducer()
             .flatMapError { _ in SignalProducer.empty }
@@ -240,7 +239,7 @@ public class ReactiveLocation: LocationManaging {
 
     }
 
-    private func locationSignal(delegateObject: NSObject) -> SignalProducer<CLLocation, LocationError> {
+    static private func locationSignal(delegateObject: NSObject) -> SignalProducer<CLLocation, LocationError> {
         return delegateObject.rac_signalForSelector(#selector(CLLocationManagerDelegate.locationManager(_: didUpdateLocations:)), fromProtocol: CLLocationManagerDelegate.self)
             .toSignalProducer()
             .flatMapError { _ in SignalProducer.empty }
@@ -248,7 +247,7 @@ public class ReactiveLocation: LocationManaging {
             .map { (($0 as! RACTuple).second as! [CLLocation]).last! }
     }
 
-    private func headingSignal(delegateObject: NSObject) -> SignalProducer<CLHeading, LocationError> {
+    static private func headingSignal(delegateObject: NSObject) -> SignalProducer<CLHeading, LocationError> {
         return delegateObject.rac_signalForSelector(#selector(CLLocationManagerDelegate.locationManager(_: didUpdateHeading:)), fromProtocol: CLLocationManagerDelegate.self)
             .toSignalProducer()
             .flatMapError { _ in SignalProducer.empty }
@@ -256,7 +255,7 @@ public class ReactiveLocation: LocationManaging {
             .map { (($0 as! RACTuple).second as! CLHeading) }
     }
 
-    private func visitSignal(delegateObject: NSObject) -> SignalProducer<CLVisit, LocationError> {
+    static private func visitSignal(delegateObject: NSObject) -> SignalProducer<CLVisit, LocationError> {
         return delegateObject.rac_signalForSelector(#selector(CLLocationManagerDelegate.locationManager(_: didVisit:)), fromProtocol: CLLocationManagerDelegate.self)
             .toSignalProducer()
             .flatMapError { _ in SignalProducer.empty }
@@ -264,7 +263,7 @@ public class ReactiveLocation: LocationManaging {
             .map { (($0 as! RACTuple).second as! CLVisit) }
     }
 
-    private func regionSignal(delegateObject: NSObject, regionState: RegionState) -> SignalProducer<RegionState, LocationError> {
+    static private func regionSignal(delegateObject: NSObject, regionState: RegionState) -> SignalProducer<RegionState, LocationError> {
 
         var selector = #selector(CLLocationManagerDelegate.locationManager(_: didEnterRegion:))
         if case .Exit = regionState {
@@ -285,7 +284,7 @@ public class ReactiveLocation: LocationManaging {
         }
     }
 
-    private func locationManagerFactory(accuracy: CLLocationAccuracy) -> CLLocationManager {
+    static private func locationManagerFactory() -> CLLocationManager {
         let cl = CLLocationManager()
         let delegate = LocationDelegate()
         cl.delegate = delegate
@@ -293,7 +292,7 @@ public class ReactiveLocation: LocationManaging {
         return cl
     }
 
-    private func merge<T, E>(signals: [SignalProducer<T, E>]) -> SignalProducer<T, E> {
+    static private func merge<T, E>(signals: [SignalProducer<T, E>]) -> SignalProducer<T, E> {
         let producers = SignalProducer<SignalProducer<T, E>, E>(values: signals)
         return producers.flatten(.Merge)
     }
