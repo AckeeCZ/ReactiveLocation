@@ -1,22 +1,22 @@
 {
   "name": "ReactiveLocation",
-  "version": "0.1.0",
-  "summary": "A short description of ReactiveLocation.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/ReactiveLocation",
+  "version": "1.0.0",
+  "summary": "Simple yet powerful wrapper of CLLocationManager for ReactiveCocoa",
+  "description": "Simple yet powerful wrapper of CLLocationManager for ReactiveCocoa. With support of requestim permissions and obtaiining user's location. Heading, Regions and Visits.",
+  "homepage": "https://github.com/AckeeCZ/ReactiveLocation",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Dominik Vesely": "dominik.vesely@ackee.cz"
+    "Ackee": "info@ackee.cz"
   },
   "source": {
     "git": "https://github.com/<GITHUB_USERNAME>/ReactiveLocation.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "8.0"
   },
   "source_files": "ReactiveLocation/Classes/**/*",
   "dependencies": {

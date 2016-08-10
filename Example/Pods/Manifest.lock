@@ -1,7 +1,7 @@
 PODS:
   - ReactiveCocoa (4.2.1):
     - Result (~> 2.0)
-  - ReactiveLocation (0.1.0):
+  - ReactiveLocation (1.0.0):
     - ReactiveCocoa
   - Result (2.1.2)
 
@@ -14,7 +14,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   ReactiveCocoa: 5a42745f11ea236f405bb9ce5e97c5e3b23562dd
-  ReactiveLocation: 1a4107c6c084b3d10ed225edfcdd031ffccd6b17
+  ReactiveLocation: baedf3f801a522e57f62e202ac6f633a1d0bd471
   Result: 6e722d4a66b1408680dbfcdf51c0b1c4b706316a
 
 PODFILE CHECKSUM: ac296a9d462dde38eb807effdd275857d50aef06
