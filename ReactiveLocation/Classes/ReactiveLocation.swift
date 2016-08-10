@@ -35,7 +35,7 @@ public enum LocationAuthorizationError: ErrorType {
     case Denied
     case Restricted
 }
-public protocol LocationManaging {
+public protocol ReactiveLocationService {
     static func locationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError>
     static func singleLocationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError>
     static func visitProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLVisit, LocationError>
@@ -68,15 +68,14 @@ extension CLLocationManager {
     }
 }
 
-public class ReactiveLocation: LocationManaging {
+public class ReactiveLocation: ReactiveLocationService {
 
     public init() { }
 
     static public func locationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError> {
         let manager = locationManagerFactory()
-        if let managerFactory = managerFactory {
-            managerFactory(manager)
-        }
+        managerFactory?(manager)
+
         guard let delegateObject = manager.delegateObject else { return SignalProducer.empty }
         return merge([errorSignal(delegateObject), locationSignal(delegateObject)])
             .on(started: {
@@ -89,9 +88,8 @@ public class ReactiveLocation: LocationManaging {
     static public func singleLocationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError> {
 
         let manager = locationManagerFactory()
-        if let managerFactory = managerFactory {
-            managerFactory(manager)
-        }
+        managerFactory?(manager)
+
         guard let delegateObject = manager.delegateObject else { return SignalProducer.empty }
         // -requestLocation guarantees callback called once
         return merge([errorSignal(delegateObject), locationSignal(delegateObject)]).take(1)
@@ -104,9 +102,8 @@ public class ReactiveLocation: LocationManaging {
 
     static public func headingProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLHeading, LocationError> {
         let manager = locationManagerFactory()
-        if let managerFactory = managerFactory {
-            managerFactory(manager)
-        }
+        managerFactory?(manager)
+
         guard let delegateObject = manager.delegateObject else { return SignalProducer.empty }
         return merge([errorSignal(delegateObject), headingSignal(delegateObject)])
             .on(started: {
@@ -118,9 +115,8 @@ public class ReactiveLocation: LocationManaging {
 
     static public func visitProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLVisit, LocationError> {
         let manager = locationManagerFactory()
-        if let managerFactory = managerFactory {
-            managerFactory(manager)
-        }
+        managerFactory?(manager)
+
         guard let delegateObject = manager.delegateObject else { return SignalProducer.empty }
         return merge([errorSignal(delegateObject), visitSignal(delegateObject)])
             .on(started: {
@@ -132,9 +128,7 @@ public class ReactiveLocation: LocationManaging {
 
     static public func regionProducer(region: CLRegion, managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<RegionState, LocationError> {
         let manager = locationManagerFactory()
-        if let managerFactory = managerFactory {
-            managerFactory(manager)
-        }
+        managerFactory?(manager)
         guard let delegateObject = manager.delegateObject else { return SignalProducer.empty }
         return merge([errorSignal(delegateObject), regionSignal(delegateObject, regionState: .Exit(region)), regionSignal(delegateObject, regionState: .Enter(region))])
             .on(started: {
@@ -262,6 +256,7 @@ public class ReactiveLocation: LocationManaging {
             .promoteErrors(LocationError)
             .map { (($0 as! RACTuple).second as! CLVisit) }
     }
+    
 
     static private func regionSignal(delegateObject: NSObject, regionState: RegionState) -> SignalProducer<RegionState, LocationError> {
 
@@ -289,6 +284,7 @@ public class ReactiveLocation: LocationManaging {
         let delegate = LocationDelegate()
         cl.delegate = delegate
         cl.delegateObject = delegate
+        cl.desiredAccuracy = kCLLocationAccuracyBest
         return cl
     }
 
