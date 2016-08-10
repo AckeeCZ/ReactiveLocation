@@ -1,5 +1,5 @@
-# ReactiveLocation
-
+![](http://img.ack.ee/default/image/test/ios_reactivelocation_logo.png)
+----
 [![CI Status](http://img.shields.io/travis/Dominik Vesely/ReactiveLocation.svg?style=flat)](https://travis-ci.org/AckeeCZ/ReactiveLocation)
 [![Version](https://img.shields.io/cocoapods/v/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 [![License](https://img.shields.io/cocoapods/l/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
@@ -7,7 +7,7 @@
 
 ## ReactiveCocoa wrapper for CLLocationManager. 
 
-Our wrapper supports almost all operations on CLLocationManager. With factory method you can easily set up manager for your needs. By default we just set the desiredAccuracy on Best. You can even request for users permission with Action
+Our wrapper supports almost all operations on CLLocationManager. With factory method you can easily set up manager for your needs. By default we just set the desiredAccuracy on Best. You can even request for users permission with Action. Mocking support for tests via Protocol imeplemtation.
 
 ### Available methods
 ```swift
@@ -47,6 +47,13 @@ Request user for WhenInUse permissions with result
 ReactiveLocation.authorizeAction.apply(.WhenInUse).producer.startWithNext { (status) in
 	print("Current user permission status on WhenInUse is \(status)")
 }
+```
+
+## Testing Support
+
+`ReactiveLocation` conforms to `ReactiveLocationService` protocol. So if you would like to mock your own location and test functionality you can just Create your own MockImplementation that conforms to this protocol
+
+
 
 ## Example
 
