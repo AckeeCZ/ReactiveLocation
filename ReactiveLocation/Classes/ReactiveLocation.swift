@@ -91,10 +91,17 @@ public class ReactiveLocation: ReactiveLocationService {
         managerFactory?(manager)
 
         guard let delegateObject = manager.delegateObject else { return SignalProducer.empty }
+        
+
+        
         // -requestLocation guarantees callback called once
         return merge([errorSignal(delegateObject), locationSignal(delegateObject)]).take(1)
             .on(started: {
-                manager.requestLocation()
+                if #available(iOS 9, *) {
+                    manager.requestLocation()
+                } else {
+                    manager.startUpdatingLocation()
+                }
                 }, terminated: {
                 manager.stopUpdatingLocation()
         })
