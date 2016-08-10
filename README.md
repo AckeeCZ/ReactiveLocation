@@ -1,6 +1,5 @@
 ![](http://img.ack.ee/default/image/test/ios_reactivelocation_logo.png)
-----
-[![CI Status](http://img.shields.io/travis/Dominik Vesely/ReactiveLocation.svg?style=flat)](https://travis-ci.org/AckeeCZ/ReactiveLocation)
+[![Travis branch](https://img.shields.io/travis/AckeeCZ/ReactiveLocation/master.svg?maxAge=2592000)](https://travis-ci.org/AckeeCZ/ReactiveLocation)
 [![Version](https://img.shields.io/cocoapods/v/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 [![License](https://img.shields.io/cocoapods/l/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 [![Platform](https://img.shields.io/cocoapods/p/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
