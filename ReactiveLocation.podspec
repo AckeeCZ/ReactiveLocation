@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ReactiveLocation'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Simple yet powerful wrapper of CLLocationManager for ReactiveCocoa'
 
 # This description is used to generate tags and improve search results.

@@ -44,6 +44,26 @@ public protocol ReactiveLocationService {
     static var authorizeAction: Action<LocationAuthorizationLevel, LocationAuthorizationLevel, LocationAuthorizationError> { get }
 }
 
+ extension ReactiveLocationService {
+    static func locationProducer(managerFactory: ((CLLocationManager) -> ())? = nil) -> SignalProducer<CLLocation, LocationError> {
+        return locationProducer(managerFactory)
+    }
+    static func singleLocationProducer(managerFactory: ((CLLocationManager) -> ())? = nil) -> SignalProducer<CLLocation, LocationError> {
+        return singleLocationProducer(managerFactory)
+    }
+    static func visitProducer(managerFactory: ((CLLocationManager) -> ())? = nil) -> SignalProducer<CLVisit, LocationError> {
+        return visitProducer(managerFactory)
+    }
+    static func regionProducer(region: CLRegion, managerFactory: ((CLLocationManager) -> ())? = nil) -> SignalProducer<RegionState, LocationError> {
+        return regionProducer(region, managerFactory: managerFactory)
+    }
+    static func headingProducer(managerFactory: ((CLLocationManager) -> ())? = nil) -> SignalProducer<CLHeading, LocationError> {
+        return headingProducer(managerFactory)
+    }
+}
+
+
+
 extension CLLocationManager {
 
     private struct AssociatedKeys {
@@ -72,7 +92,7 @@ public class ReactiveLocation: ReactiveLocationService {
 
     public init() { }
 
-    static public func locationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError> {
+    static public func locationProducer(managerFactory: ((CLLocationManager) -> ())? = nil) -> SignalProducer<CLLocation, LocationError> {
         let manager = locationManagerFactory()
         managerFactory?(manager)
 
@@ -85,7 +105,7 @@ public class ReactiveLocation: ReactiveLocationService {
         })
     }
 
-    static public func singleLocationProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLLocation, LocationError> {
+    static public func singleLocationProducer(managerFactory: ((CLLocationManager) -> ())? = nil ) -> SignalProducer<CLLocation, LocationError> {
 
         let manager = locationManagerFactory()
         managerFactory?(manager)
@@ -107,7 +127,7 @@ public class ReactiveLocation: ReactiveLocationService {
         })
     }
 
-    static public func headingProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLHeading, LocationError> {
+    static public func headingProducer(managerFactory: ((CLLocationManager) -> ())? = nil) -> SignalProducer<CLHeading, LocationError> {
         let manager = locationManagerFactory()
         managerFactory?(manager)
 
@@ -120,7 +140,7 @@ public class ReactiveLocation: ReactiveLocationService {
         })
     }
 
-    static public func visitProducer(managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<CLVisit, LocationError> {
+    static public func visitProducer(managerFactory: ((CLLocationManager) -> ())? = nil) -> SignalProducer<CLVisit, LocationError> {
         let manager = locationManagerFactory()
         managerFactory?(manager)
 
@@ -133,7 +153,7 @@ public class ReactiveLocation: ReactiveLocationService {
         })
     }
 
-    static public func regionProducer(region: CLRegion, managerFactory: ((CLLocationManager) -> ())?) -> SignalProducer<RegionState, LocationError> {
+    static public func regionProducer(region: CLRegion, managerFactory: ((CLLocationManager) -> ())? = nil) -> SignalProducer<RegionState, LocationError> {
         let manager = locationManagerFactory()
         managerFactory?(manager)
         guard let delegateObject = manager.delegateObject else { return SignalProducer.empty }
