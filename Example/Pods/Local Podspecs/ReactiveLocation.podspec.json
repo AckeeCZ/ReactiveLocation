@@ -1,6 +1,6 @@
 {
   "name": "ReactiveLocation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "summary": "Simple yet powerful wrapper of CLLocationManager for ReactiveCocoa",
   "description": "Simple yet powerful wrapper of CLLocationManager for ReactiveCocoa. With support of requestim permissions and obtaiining user's location. Heading, Regions and Visits.",
   "homepage": "https://github.com/AckeeCZ/ReactiveLocation",
@@ -12,8 +12,8 @@
     "Ackee": "info@ackee.cz"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/ReactiveLocation.git",
-    "tag": "1.0.0"
+    "git": "https://github.com/AckeeCZ/ReactiveLocation.git",
+    "tag": "1.0.1"
   },
   "platforms": {
     "ios": "8.0"

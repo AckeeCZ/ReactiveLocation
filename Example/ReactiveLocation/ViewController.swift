@@ -13,11 +13,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ReactiveLocation.singleLocationProducer().startWithNext {
-            location in
-            
-        }
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -28,7 +24,8 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-    }
 
+        ReactiveLocation.authorizeAction.apply(.WhenInUse).start()
+    }
 
 }
