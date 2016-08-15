@@ -44,7 +44,7 @@ public protocol ReactiveLocationService {
     static var authorizeAction: Action<LocationAuthorizationLevel, LocationAuthorizationLevel, LocationAuthorizationError> { get }
 }
 
- extension ReactiveLocationService {
+extension ReactiveLocationService {
     static func locationProducer(managerFactory: ((CLLocationManager) -> ())? = nil) -> SignalProducer<CLLocation, LocationError> {
         return locationProducer(managerFactory)
     }
@@ -61,8 +61,6 @@ public protocol ReactiveLocationService {
         return headingProducer(managerFactory)
     }
 }
-
-
 
 extension CLLocationManager {
 
@@ -105,15 +103,13 @@ public class ReactiveLocation: ReactiveLocationService {
         })
     }
 
-    static public func singleLocationProducer(managerFactory: ((CLLocationManager) -> ())? = nil ) -> SignalProducer<CLLocation, LocationError> {
+    static public func singleLocationProducer(managerFactory: ((CLLocationManager) -> ())? = nil) -> SignalProducer<CLLocation, LocationError> {
 
         let manager = locationManagerFactory()
         managerFactory?(manager)
 
         guard let delegateObject = manager.delegateObject else { return SignalProducer.empty }
-        
 
-        
         // -requestLocation guarantees callback called once
         return merge([errorSignal(delegateObject), locationSignal(delegateObject)]).take(1)
             .on(started: {
@@ -165,83 +161,75 @@ public class ReactiveLocation: ReactiveLocationService {
         })
     }
 
-     static public let authorizeAction: Action<LocationAuthorizationLevel, LocationAuthorizationLevel, LocationAuthorizationError> =
+    static public let authorizeAction: Action<LocationAuthorizationLevel, LocationAuthorizationLevel, LocationAuthorizationError> =
 
-         Action {  targetLevel in
-            let translateStatus: CLAuthorizationStatus -> SignalProducer <LocationAuthorizationLevel, LocationAuthorizationError> = { status in
-                if let level = LocationAuthorizationLevel(status: status)
-                where level >= targetLevel {
-                    return SignalProducer(value: level)
-                } else {
-                    switch status {
-                    case .Restricted: return SignalProducer(error: .Restricted)
-                    case .Denied: return SignalProducer(error: .Denied)
-                    default:
-                        assertionFailure("CLAuthorizationStatus shouldnt be .NotDetermined by now, maybe someone changed authorizationStatus from the outside?")
-                        return SignalProducer(error: .Restricted)
-                    }
+    Action { targetLevel in
+        let translateStatus: CLAuthorizationStatus -> SignalProducer <LocationAuthorizationLevel, LocationAuthorizationError> = { status in
+            if let level = LocationAuthorizationLevel(status: status)
+            where level >= targetLevel {
+                return SignalProducer(value: level)
+            } else {
+                switch status {
+                case .Restricted: return SignalProducer(error: .Restricted)
+                case .Denied: return SignalProducer(error: .Denied)
+                default:
+                    assertionFailure("CLAuthorizationStatus shouldnt be .NotDetermined by now, maybe someone changed authorizationStatus from the outside?")
+                    return SignalProducer(error: .Restricted)
                 }
             }
-
-            let cl = ReactiveLocation.locationManagerFactory()
-            return SignalProducer<CLAuthorizationStatus, NoError> { sink, dis in
-
-                sink.sendNext(CLLocationManager.authorizationStatus()); sink.sendCompleted()
-            }
-                .promoteErrors(LocationAuthorizationError)
-                .flatMap(.Latest) { status -> SignalProducer<LocationAuthorizationLevel, LocationAuthorizationError> in
-                    if case .NotDetermined = status {
-                        return cl.delegateObject!.rac_signalForSelector(#selector(CLLocationManagerDelegate.locationManager(_: didChangeAuthorizationStatus:)), fromProtocol: CLLocationManagerDelegate.self)
-                            .toSignalProducer()
-                            .flatMapError { _ in SignalProducer.empty }
-                            .on(started: { 
-                                switch targetLevel {
-                                case .Always: cl.requestAlwaysAuthorization()
-                                case .WhenInUse: cl.requestWhenInUseAuthorization()
-                                }
-                        })
-                            .take(1)
-                            .map { return CLAuthorizationStatus(rawValue: Int32(($0 as! RACTuple).second as! Int))! }
-                            .filter { $0 != .NotDetermined }
-                        // the delegate gets called with the current value after calling requestAuthorization, before the user selects an option, so we have to filter out this first value, TODO: refactor this
-                        .promoteErrors(LocationAuthorizationError)
-                            .flatMap(.Latest, transform: translateStatus)
-                    } else {
-                        return translateStatus(status)
-                    }
-            }
         }
-    
+
+        let cl = ReactiveLocation.locationManagerFactory()
+        return SignalProducer<CLAuthorizationStatus, NoError> { sink, dis in
+
+            sink.sendNext(CLLocationManager.authorizationStatus()); sink.sendCompleted()
+        }
+            .promoteErrors(LocationAuthorizationError)
+            .flatMap(.Latest) { status -> SignalProducer<LocationAuthorizationLevel, LocationAuthorizationError> in
+                if case .NotDetermined = status {
+                    return cl.delegateObject!.rac_signalForSelector(#selector(CLLocationManagerDelegate.locationManager(_: didChangeAuthorizationStatus:)), fromProtocol: CLLocationManagerDelegate.self)
+                        .toSignalProducer()
+                        .flatMapError { _ in SignalProducer.empty }
+                        .on(started: {
+                            switch targetLevel {
+                            case .Always: cl.requestAlwaysAuthorization()
+                            case .WhenInUse: cl.requestWhenInUseAuthorization()
+                            }
+                    })
+                        .map { return CLAuthorizationStatus(rawValue: Int32(($0 as! RACTuple).second as! Int))! }
+                        .filter { $0 != .NotDetermined }
+                    // the delegate gets called with the current value after calling requestAuthorization, before the user selects an option, so we have to filter out this first value, TODO: refactor this
+                    .take(1)
+                        .promoteErrors(LocationAuthorizationError)
+                        .flatMap(.Latest, transform: translateStatus)
+                } else {
+                    return translateStatus(status)
+                }
+        }
+    }
 
     // MARK: Internal
 
     private class LocationDelegate: NSObject, CLLocationManagerDelegate {
         @objc func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-
         }
 
         @objc func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-
         }
 
         @objc func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
         }
 
         func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-
         }
 
         func locationManager(manager: CLLocationManager, didVisit visit: CLVisit) {
-
         }
 
         func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
-
         }
 
         func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-
         }
     }
 
@@ -257,7 +245,6 @@ public class ReactiveLocation: ReactiveLocationService {
             .flatMap(.Latest) { (error) in
                 return SignalProducer<T, LocationError>(error: .LocationError(error))
         }
-
     }
 
     static private func locationSignal(delegateObject: NSObject) -> SignalProducer<CLLocation, LocationError> {
@@ -283,7 +270,6 @@ public class ReactiveLocation: ReactiveLocationService {
             .promoteErrors(LocationError)
             .map { (($0 as! RACTuple).second as! CLVisit) }
     }
-    
 
     static private func regionSignal(delegateObject: NSObject, regionState: RegionState) -> SignalProducer<RegionState, LocationError> {
 
