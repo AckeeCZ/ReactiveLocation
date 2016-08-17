@@ -195,7 +195,8 @@ public class ReactiveLocation: ReactiveLocationService {
                             case .Always: cl.requestAlwaysAuthorization()
                             case .WhenInUse: cl.requestWhenInUseAuthorization()
                             }
-                    })
+                            }, disposed: { cl }
+                        )
                         .map { return CLAuthorizationStatus(rawValue: Int32(($0 as! RACTuple).second as! Int))! }
                         .filter { $0 != .NotDetermined }
                     // the delegate gets called with the current value after calling requestAuthorization, before the user selects an option, so we have to filter out this first value, TODO: refactor this
