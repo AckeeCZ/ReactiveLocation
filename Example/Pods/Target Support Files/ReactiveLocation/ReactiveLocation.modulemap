@@ -1,6 +1,0 @@
-framework module ReactiveLocation {
-  umbrella header "ReactiveLocation-umbrella.h"
-
-  export *
-  module * { export * }
-}
