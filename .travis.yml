@@ -10,5 +10,5 @@ before_install:
 - gem install cocoapods -v 1.1.0.rc.2 # Since Travis is not always on latest version
 - pod install --project-directory=Example --repo-update
 script:
-- set -o pipefail && xcodebuild test -workspace Example/ACKategories.xcworkspace -scheme ACKategories-Example -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.0' ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/ReactiveLocation.xcworkspace -scheme ReactiveLocation-Example -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.0' ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint --allow-warnings
