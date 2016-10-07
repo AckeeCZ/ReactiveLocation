@@ -197,6 +197,8 @@ open class ReactiveLocation: ReactiveLocationService {
                             case .always: cl.requestAlwaysAuthorization()
                             case .whenInUse: cl.requestWhenInUseAuthorization()
                             }
+                            }, terminated: {
+                                _ = cl // make sure location manager does not get deallocated before action terminates
                         })
                         .filter { $0 != .notDetermined }
                         .promoteErrors(LocationAuthorizationError)
