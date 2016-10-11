@@ -22,10 +22,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        ReactiveLocation.authorizeAction.apply(.WhenInUse).start()
+        ReactiveLocation.authorizeAction.apply(.whenInUse).start()
     }
 
 }
