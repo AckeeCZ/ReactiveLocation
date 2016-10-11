@@ -34,31 +34,31 @@ internal class ReactiveLocationManagerDelegate: NSObject, CLLocationManagerDeleg
     private let didExitRegionPipe = Signal<CLRegion,NoError>.pipe()
     internal lazy var didExitRegion: Signal<CLRegion,NoError> = self.didExitRegionPipe.0
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    internal func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         didChangeAuthorizationStatusPipe.1.send(value: status)
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    internal func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         didFailPipe.1.send(value: error)
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         didUpdateLocationsPipe.1.send(value: locations)
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+    internal func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         didUpdateHeadingPipe.1.send(value: newHeading)
     }
     
-    func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
+    internal func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
         didVisitPipe.1.send(value: visit)
     }
     
-    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+    internal func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         didEnterRegionPipe.1.send(value: region)
     }
     
-    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+    internal func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         didExitRegionPipe.1.send(value: region)
     }
 }
