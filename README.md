@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 [![Platform](https://img.shields.io/cocoapods/p/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 
-## ReactiveCocoa wrapper for CLLocationManager. 
+## ReactiveSwift wrapper for CLLocationManager. 
 
 Our wrapper supports almost all operations on CLLocationManager. With factory method you can easily set up manager for your needs. By default we just set the desiredAccuracy on Best. You can even request for users permission with Action. Mocking support for tests via Protocol imeplemtation.
 
@@ -60,7 +60,7 @@ In progresss
 
 ## Requirements
 
-ReactiveCocoa 
+ReactiveSwift
 
 ## Installation
 
