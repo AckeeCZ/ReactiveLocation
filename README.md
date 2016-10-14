@@ -71,9 +71,12 @@ it, simply add the following line to your Podfile:
 pod "ReactiveLocation"
 ```
 
+## Sharing is caring
+This tool and repo has been opensourced within our `#sharingiscaring` action when we have decided to opensource our internal projects
+
 ## Author
 
-Ackee.cz (www.ackee.cz)
+[Ackee](www.ackee.cz) team
 
 ## License
 
