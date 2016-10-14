@@ -71,6 +71,9 @@ it, simply add the following line to your Podfile:
 pod "ReactiveLocation"
 ```
 
+## Forking this repository 
+If you use ReactiveLocation in your projects drop us a tweet at [@ackeecz][1] or leave a star here on Github. We would love to hear about it!
+
 ## Sharing is caring
 This tool and repo has been opensourced within our `#sharingiscaring` action when we have decided to opensource our internal projects
 
@@ -81,3 +84,5 @@ This tool and repo has been opensourced within our `#sharingiscaring` action whe
 ## License
 
 ReactiveLocation is available under the MIT license. See the LICENSE file for more info.
+
+[1]:	https://twitter.com/AckeeCZ
