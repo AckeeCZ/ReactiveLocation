@@ -10,11 +10,11 @@ Our wrapper supports almost all operations on CLLocationManager. With factory me
 
 ### Available methods
 ```swift
-static func locationProducer(_ managerFactory: LocationManagerFactory?) -> SignalProducer<CLLocation, LocationError>
-static func singleLocationProducer(_ managerFactory: LocationManagerFactory?) -> SignalProducer<CLLocation, LocationError>
-static func visitProducer(_ managerFactory: LocationManagerFactory?) -> SignalProducer<CLVisit, LocationError>
-static func regionProducer(_ region: CLRegion, managerFactory: LocationManagerFactory?) -> SignalProducer<RegionEvent, LocationError>
-static func headingProducer(_ managerFactory: LocationManagerFactory?) -> SignalProducer<CLHeading, LocationError>
+static func locationProducer(_ managerFactory: LocationManagerConfigureBlock?) -> SignalProducer<CLLocation, LocationError>
+static func singleLocationProducer(_ managerFactory: LocationManagerConfigureBlock?) -> SignalProducer<CLLocation, LocationError>
+static func visitProducer(_ managerFactory: LocationManagerConfigureBlock?) -> SignalProducer<CLVisit, LocationError>
+static func regionProducer(_ region: CLRegion, managerFactory: LocationManagerConfigureBlock?) -> SignalProducer<RegionEvent, LocationError>
+static func headingProducer(_ managerFactory: LocationManagerConfigureBlock?) -> SignalProducer<CLHeading, LocationError>
 static var authorizeAction: Action<LocationAuthorizationLevel, LocationAuthorizationLevel, LocationAuthorizationError> { get }
 ```
 
