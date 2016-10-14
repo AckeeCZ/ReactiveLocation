@@ -71,6 +71,16 @@ it, simply add the following line to your Podfile:
 pod "ReactiveLocation"
 ```
 
+### Version compatibility
+
+ReactiveLocation requires Xcode 8+ and Swift 3. Older versions are supported in previous versions.
+
+| Swift Version | ReactiveLocationVersion |
+| ------------- | ------ |
+| 3.X           | master |
+| 2.X           | 1.0 |
+
+
 ## Forking this repository 
 If you use ReactiveLocation in your projects drop us a tweet at [@ackeecz][1] or leave a star here on Github. We would love to hear about it!
 
