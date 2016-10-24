@@ -4,9 +4,9 @@
 [![License](https://img.shields.io/cocoapods/l/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 [![Platform](https://img.shields.io/cocoapods/p/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 
-## ReactiveCocoa wrapper for CLLocationManager.
+## ReactiveSwift wrapper for CLLocationManager.
 
-Our wrapper supports almost all operations on CLLocationManager. With factory method you can easily set up manager for your needs. By default we just set the desiredAccuracy on Best. You can even request for users permission with Action. Mocking support for tests via Protocol imeplemtation.
+Our wrapper supports almost all operations on CLLocationManager. With factory method you can easily set up manager for your needs. By default we just set the desiredAccuracy on Best. You can even request for users permission with Action. Mocking support for tests via Protocol implementation.
 
 ### Available methods
 ```swift
@@ -24,8 +24,13 @@ Difference versus location and singleLocation lies in ios9+ implementation of CL
 Simply retrieve user's current location
 
 ```swift
-ReactiveLocation.singleLocationProducer.startWithNext { location in
-    print(location)            
+ReactiveLocation.locationProducer().startWithResult {
+    switch $0 {
+    case let .success(location):
+        print(location)
+    case let .failure(error):
+        print(error)
+    }
 }
 ```
 
@@ -33,18 +38,29 @@ Simply retrieve location over time. With custom manager settings
 
 ```swift
 ReactiveLocation.singleLocationProducer { manager in
-	manager.distanceFilter = 1000
-	manager.desiredAccuracy = kCLLocationAccuracyBest
-}.startWithNext { location in
-    print(location)            
+    manager.distanceFilter = 1000
+    manager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    .startWithResult {
+        switch $0 {
+        case let .success(location):
+            print(location)
+        case let .failure(error):
+            print(error)
+        }
 }
 ```
 
 Request user for WhenInUse permissions with result
 
 ```swift
-ReactiveLocation.authorizeAction.apply(.WhenInUse).producer.startWithNext { (status) in
-	print("Current user permission status on WhenInUse is \(status)")
+ReactiveLocation.authorizeAction.apply(.whenInUse).startWithResult {
+    switch $0 {
+    case let .success(status):
+        print("Current user permission status on WhenInUse is \(status)")
+    case let .failure(error):
+        print(error)
+    }
 }
 ```
 
@@ -60,7 +76,7 @@ In progresss
 
 ## Requirements
 
-ReactiveCocoa
+ReactiveSwift
 
 ## Installation
 
@@ -71,10 +87,28 @@ it, simply add the following line to your Podfile:
 pod "ReactiveLocation"
 ```
 
+### Version compatibility
+
+ReactiveLocation requires Xcode 8+ and Swift 3. Older versions are supported in previous versions.
+
+| Swift Version | ReactiveLocationVersion |
+| ------------- | ------ |
+| 3.X           | master |
+| 2.X           | 1.0 |
+
+
+## Forking this repository
+If you use ReactiveLocation in your projects drop us a tweet at [@ackeecz][1] or leave a star here on Github. We would love to hear about it!
+
+## Sharing is caring
+This tool and repo has been opensourced within our `#sharingiscaring` action when we have decided to opensource our internal projects
+
 ## Author
 
-Ackee.cz (www.ackee.cz)
+[Ackee](www.ackee.cz) team
 
 ## License
 
 ReactiveLocation is available under the MIT license. See the LICENSE file for more info.
+
+[1]:	https://twitter.com/AckeeCZ
