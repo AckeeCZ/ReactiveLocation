@@ -38,5 +38,5 @@ DESC
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'ReactiveSwift', '~> 1.0.0-alpha.3'
+  s.dependency 'ReactiveSwift', '~> 1.0'
 end

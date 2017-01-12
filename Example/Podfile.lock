@@ -1,9 +1,9 @@
 PODS:
-  - ReactiveLocation (2.0.0):
-    - ReactiveSwift (= 1.0.0-alpha.1)
-  - ReactiveSwift (1.0.0-alpha.1):
-    - Result (~> 3.0)
-  - Result (3.0.0)
+  - ReactiveLocation (2.0.1):
+    - ReactiveSwift (~> 1.0)
+  - ReactiveSwift (1.0.0):
+    - Result (~> 3.1)
+  - Result (3.1.0)
 
 DEPENDENCIES:
   - ReactiveLocation (from `../`)
@@ -13,10 +13,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ReactiveLocation: 90e299c247c86d22c3dad3553e48f68541e02a1b
-  ReactiveSwift: cf34523b2b0dd8fbfc8fda484b0d0585e3d74955
-  Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
+  ReactiveLocation: e1b1b3d078bf761fbaa5fa0fdbf78ddd04dc0937
+  ReactiveSwift: f391724ee318a2cfd3e37dfb041cd49ecf4e7869
+  Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
 
 PODFILE CHECKSUM: ac296a9d462dde38eb807effdd275857d50aef06
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0.beta.1
