@@ -188,7 +188,7 @@ public class ReactiveLocation: ReactiveLocationService {
             sink.send(value: CLLocationManager.authorizationStatus())
             sink.sendCompleted()
             }
-            .promoteErrors(LocationAuthorizationError.self)
+            .promoteError(LocationAuthorizationError.self)
             .flatMap(.latest) { status -> SignalProducer<LocationAuthorizationLevel, LocationAuthorizationError> in
                 if case .notDetermined = status {
                     return SignalProducer(cl.delegateObject!.didChangeAuthorizationStatus)
@@ -201,9 +201,9 @@ public class ReactiveLocation: ReactiveLocationService {
                                 _ = cl // make sure location manager does not get deallocated before action terminates
                         })
                         .filter { $0 != .notDetermined }
-                        .promoteErrors(LocationAuthorizationError.self)
+                        .promoteError(LocationAuthorizationError.self)
                         .take(first: 1)
-                        .flatMap(.latest, transform: translateStatus)
+                        .flatMap(.latest, translateStatus)
                 } else {
                     return translateStatus(status)
                 }
@@ -221,15 +221,15 @@ public class ReactiveLocation: ReactiveLocationService {
     }
 
     static private func locationSignal(_ delegateObject: ReactiveLocationManagerDelegate) -> SignalProducer<CLLocation, LocationError> {
-        return SignalProducer(delegateObject.didUpdateLocations).promoteErrors(LocationError.self).map { $0.last! }
+        return SignalProducer(delegateObject.didUpdateLocations).promoteError(LocationError.self).map { $0.last! }
     }
 
     static private func headingSignal(_ delegateObject: ReactiveLocationManagerDelegate) -> SignalProducer<CLHeading, LocationError> {
-        return SignalProducer(delegateObject.didUpdateHeading).promoteErrors(LocationError.self)
+        return SignalProducer(delegateObject.didUpdateHeading).promoteError(LocationError.self)
     }
 
     static private func visitSignal(_ delegateObject: ReactiveLocationManagerDelegate) -> SignalProducer<CLVisit, LocationError> {
-        return SignalProducer(delegateObject.didVisit).promoteErrors(LocationError.self)
+        return SignalProducer(delegateObject.didVisit).promoteError(LocationError.self)
     }
 
     static private func regionSignal(_ delegateObject: ReactiveLocationManagerDelegate, regionState: RegionEvent) -> SignalProducer<RegionEvent, LocationError> {
@@ -242,7 +242,7 @@ public class ReactiveLocation: ReactiveLocationService {
             signal = SignalProducer(delegateObject.didExitRegion).map { .exit($0) }
         }
 
-        return signal.promoteErrors(LocationError.self)
+        return signal.promoteError(LocationError.self)
     }
 
     static private func LocationManagerConfigureBlock() -> CLLocationManager {

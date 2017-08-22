@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ReactiveLocation'
-  s.version          = '2.0.2'
+  s.version          = '3.0.0'
   s.summary          = 'Simple yet powerful wrapper of CLLocationManager for ReactiveCocoa'
 
 # This description is used to generate tags and improve search results.
@@ -38,5 +38,5 @@ DESC
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'ReactiveSwift', '~> 1.0'
+  s.dependency 'ReactiveSwift', '~> 2.0'
 end
