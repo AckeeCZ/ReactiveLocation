@@ -7,7 +7,7 @@ language: objective-c
 cache: cocoapods
 podfile: Example/Podfile
 before_install:
-- gem install cocoapods# Since Travis is not always on latest version
+- gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=Example --repo-update
 script:
 - set -o pipefail && xcodebuild test -workspace Example/ReactiveLocation.xcworkspace -scheme ReactiveLocation-Example -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.0' ONLY_ACTIVE_ARCH=NO | xcpretty
