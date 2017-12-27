@@ -1,14 +1,12 @@
-# references:
-# * http://www.objc.io/issue-6/travis-ci.html
-# * https://github.com/supermarin/xcpretty#usage
-
-osx_image: xcode9.1
+osx_image: xcode9.2
 language: objective-c
-cache: cocoapods
-podfile: Example/Podfile
+cache:
+  directories:
+  - Carthage
 before_install:
-- gem install cocoapods # Since Travis is not always on latest version
-- pod install --project-directory=Example --repo-update
+- brew update
+- brew outdated carthage || brew upgrade carthage
+- carthage bootstrap --platform iOS --cache-builds
 script:
-- set -o pipefail && xcodebuild test -workspace Example/ReactiveLocation.xcworkspace -scheme ReactiveLocation-Example -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.1' ONLY_ACTIVE_ARCH=NO | xcpretty
-- pod lib lint --allow-warnings
+- set -o pipefail && xcodebuild test -scheme ReactiveLocation -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.2' ONLY_ACTIVE_ARCH=NO | xcpretty
+- pod lib lint
