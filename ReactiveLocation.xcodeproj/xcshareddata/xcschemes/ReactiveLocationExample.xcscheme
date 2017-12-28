@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0900"
+   LastUpgradeVersion = "0920"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "ReactiveLocation_Example.app"
-               BlueprintName = "ReactiveLocation_Example"
-               ReferencedContainer = "container:ReactiveLocation.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "ReactiveLocation_Tests.xctest"
-               BlueprintName = "ReactiveLocation_Tests"
+               BlueprintIdentifier = "69F73EAA1FF43CD500E2DD85"
+               BuildableName = "ReactiveLocationExample.app"
+               BlueprintName = "ReactiveLocationExample"
                ReferencedContainer = "container:ReactiveLocation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,23 +29,13 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "ReactiveLocation_Tests.xctest"
-               BlueprintName = "ReactiveLocation_Tests"
-               ReferencedContainer = "container:ReactiveLocation.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "ReactiveLocation_Example.app"
-            BlueprintName = "ReactiveLocation_Example"
+            BlueprintIdentifier = "69F73EAA1FF43CD500E2DD85"
+            BuildableName = "ReactiveLocationExample.app"
+            BlueprintName = "ReactiveLocationExample"
             ReferencedContainer = "container:ReactiveLocation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -81,9 +57,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "ReactiveLocation_Example.app"
-            BlueprintName = "ReactiveLocation_Example"
+            BlueprintIdentifier = "69F73EAA1FF43CD500E2DD85"
+            BuildableName = "ReactiveLocationExample.app"
+            BlueprintName = "ReactiveLocationExample"
             ReferencedContainer = "container:ReactiveLocation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -100,9 +76,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "ReactiveLocation_Example.app"
-            BlueprintName = "ReactiveLocation_Example"
+            BlueprintIdentifier = "69F73EAA1FF43CD500E2DD85"
+            BuildableName = "ReactiveLocationExample.app"
+            BlueprintName = "ReactiveLocationExample"
             ReferencedContainer = "container:ReactiveLocation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

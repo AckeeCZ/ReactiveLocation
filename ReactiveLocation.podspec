@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ReactiveLocation'
-  s.version          = '3.0.0'
+  s.version          = '3.0.1'
   s.summary          = 'Simple yet powerful wrapper of CLLocationManager for ReactiveCocoa'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ DESC
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'ReactiveLocation/Classes/**/*'
+  s.source_files = 'ReactiveLocation/*.swift'
 
   # s.resource_bundles = {
   #   'ReactiveLocation' => ['ReactiveLocation/Assets/*.png']
