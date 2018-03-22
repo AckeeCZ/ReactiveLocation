@@ -18,7 +18,6 @@
 		69F73EC01FF43D3A00E2DD85 /* ReactiveLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F73EBE1FF43D3A00E2DD85 /* ReactiveLocationManagerDelegate.swift */; };
 		69F73EC11FF43D3A00E2DD85 /* ReactiveLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F73EBF1FF43D3A00E2DD85 /* ReactiveLocation.swift */; };
 		69F73EC21FF43DDC00E2DD85 /* ReactiveLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73E8F1FF43CC200E2DD85 /* ReactiveLocation.framework */; };
-		69F73EC31FF43DDC00E2DD85 /* ReactiveLocation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73E8F1FF43CC200E2DD85 /* ReactiveLocation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		69F73ECB1FF43E4D00E2DD85 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73EC91FF43E4D00E2DD85 /* ReactiveSwift.framework */; };
 		69F73ECC1FF43E4D00E2DD85 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73ECA1FF43E4D00E2DD85 /* Result.framework */; };
 /* End PBXBuildFile section */
@@ -40,21 +39,8 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		69F73EC61FF43DDC00E2DD85 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				69F73EC31FF43DDC00E2DD85 /* ReactiveLocation.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		69980CA0206419A900BC01E2 /* ReactiveLocation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = ReactiveLocation.podspec; sourceTree = "<group>"; };
 		69F73E8F1FF43CC200E2DD85 /* ReactiveLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F73E921FF43CC200E2DD85 /* ReactiveLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveLocation.h; sourceTree = "<group>"; };
 		69F73E931FF43CC200E2DD85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,6 +92,7 @@
 		699676111FF43C7000986B37 = {
 			isa = PBXGroup;
 			children = (
+				69980CA0206419A900BC01E2 /* ReactiveLocation.podspec */,
 				69F73E911FF43CC200E2DD85 /* ReactiveLocation */,
 				69F73E9C1FF43CC200E2DD85 /* ReactiveLocationTests */,
 				69F73EAC1FF43CD500E2DD85 /* ReactiveLocationExample */,
@@ -196,7 +183,6 @@
 				69F73E8B1FF43CC200E2DD85 /* Frameworks */,
 				69F73E8C1FF43CC200E2DD85 /* Headers */,
 				69F73E8D1FF43CC200E2DD85 /* Resources */,
-				69F73EC71FF43E0300E2DD85 /* Carthage stuff */,
 			);
 			buildRules = (
 			);
@@ -232,7 +218,7 @@
 				69F73EA71FF43CD500E2DD85 /* Sources */,
 				69F73EA81FF43CD500E2DD85 /* Frameworks */,
 				69F73EA91FF43CD500E2DD85 /* Resources */,
-				69F73EC61FF43DDC00E2DD85 /* Embed Frameworks */,
+				69980C9F2064192B00BC01E2 /* [Carthage] Copy frameworks */,
 			);
 			buildRules = (
 			);
@@ -316,7 +302,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		69F73EC71FF43E0300E2DD85 /* Carthage stuff */ = {
+		69980C9F2064192B00BC01E2 /* [Carthage] Copy frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -325,7 +311,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
 			);
-			name = "Carthage stuff";
+			name = "[Carthage] Copy frameworks";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveSwift.framework",
