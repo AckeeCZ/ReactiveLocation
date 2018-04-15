@@ -1,4 +1,4 @@
-osx_image: xcode9.2
+osx_image: xcode9.3
 language: objective-c
 cache:
   directories:
@@ -8,5 +8,5 @@ before_install:
 - brew outdated carthage || brew upgrade carthage
 - carthage bootstrap --platform iOS --cache-builds
 script:
-- set -o pipefail && xcodebuild test -scheme ReactiveLocation -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.2' ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -scheme ReactiveLocation -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.3' ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint

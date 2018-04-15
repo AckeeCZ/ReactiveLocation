@@ -23,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		69F2CB2D20839F2F00BE3C33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 699676121FF43C7000986B37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69F73EAA1FF43CD500E2DD85;
+			remoteInfo = ReactiveLocationExample;
+		};
 		69F73E9A1FF43CC200E2DD85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 699676121FF43C7000986B37 /* Project object */;
@@ -205,6 +212,7 @@
 			);
 			dependencies = (
 				69F73E9B1FF43CC200E2DD85 /* PBXTargetDependency */,
+				69F2CB2E20839F2F00BE3C33 /* PBXTargetDependency */,
 			);
 			name = ReactiveLocationTests;
 			productName = ReactiveLocationTests;
@@ -247,6 +255,7 @@
 					69F73E971FF43CC200E2DD85 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Manual;
+						TestTargetID = 69F73EAA1FF43CD500E2DD85;
 					};
 					69F73EAA1FF43CD500E2DD85 = {
 						CreatedOnToolsVersion = 9.2;
@@ -352,6 +361,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		69F2CB2E20839F2F00BE3C33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69F73EAA1FF43CD500E2DD85 /* ReactiveLocationExample */;
+			targetProxy = 69F2CB2D20839F2F00BE3C33 /* PBXContainerItemProxy */;
+		};
 		69F73E9B1FF43CC200E2DD85 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 69F73E8E1FF43CC200E2DD85 /* ReactiveLocation */;
@@ -611,6 +625,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactiveLocationExample.app/ReactiveLocationExample";
 			};
 			name = Debug;
 		};
@@ -670,6 +685,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactiveLocationExample.app/ReactiveLocationExample";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
