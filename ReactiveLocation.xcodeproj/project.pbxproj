@@ -47,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6922F08221131575003474FC /* Cartfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Cartfile; sourceTree = "<group>"; };
 		69980CA0206419A900BC01E2 /* ReactiveLocation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = ReactiveLocation.podspec; sourceTree = "<group>"; };
 		69F73E8F1FF43CC200E2DD85 /* ReactiveLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F73E921FF43CC200E2DD85 /* ReactiveLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveLocation.h; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		699676111FF43C7000986B37 = {
 			isa = PBXGroup;
 			children = (
+				6922F08221131575003474FC /* Cartfile */,
 				69980CA0206419A900BC01E2 /* ReactiveLocation.podspec */,
 				69F73E911FF43CC200E2DD85 /* ReactiveLocation */,
 				69F73E9C1FF43CC200E2DD85 /* ReactiveLocationTests */,
@@ -401,12 +403,14 @@
 		699676161FF43C7000986B37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
 		699676171FF43C7000986B37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -471,7 +475,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ReactiveLocation/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -544,7 +547,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ReactiveLocation/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.ReactiveLocation;
