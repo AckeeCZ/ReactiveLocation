@@ -9,4 +9,4 @@ before_install:
 - carthage bootstrap --platform iOS --cache-builds
 script:
 - set -o pipefail && xcodebuild test -scheme ReactiveLocation -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=NO | xcpretty
-# - pod lib lint
+- pod lib lint || pod repo update && pod lib lint
