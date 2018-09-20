@@ -1,12 +1,29 @@
 osx_image: xcode9.4
 language: objective-c
+env:
+  global:
+  - FRAMEWORK_NAME=ReactiveLocation
 cache:
   directories:
   - Carthage
 before_install:
 - brew update
 - brew outdated carthage || brew upgrade carthage
+before_script:
 - carthage bootstrap --platform iOS --cache-builds
+before_deploy:
+- carthage build --no-skip-current --platform iOS --cache-builds
+- carthage archive $FRAMEWORK_NAME
+- pod trunk push
 script:
 - set -o pipefail && xcodebuild test -scheme ReactiveLocation -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint || pod repo update && pod lib lint
+deploy:
+  provider: releases
+  api_key:
+    secure: Ej6ZbwpswtmGiqs6dOTxDf9pko+ieSurHEjJ7gL+rzv9CucjoYcxTKkKddWMpxQEu/jGs1FpgOyvWAm9N3idftsOSaLdkow+dBiTvHZpgK0xMntJNbu7ypt1KhwEx1V+6ZT5PckCaFoa+WdO3pvQOSCBXiOVCQ1dj44Kwd15T6RF/fv+3uASW5MprbOKdHLJp4QhpDhSwpAoy9QOROD+fQfNhIpR5yTy25uoRgF5weLDEimX5fjLk8WWXiBT5kwCvhXpw4Rcc1ciAC02XnX4YC+G/DWlSK8oEIaFArVkHDpuD7dJSFz1x7VNdbtgnWApW7mLPkzhN8m5hT7OaPa7iJo4owhGOSBb6EXSWD/Qw1XOpab0FPzwFtK/r0emylx5cl9chPnfbZguZ3FB5qoMHzVufKCdC80cf87O3BR2l5AYWpzRmoJ5HOcQOnDlWpzrjehMMerhXiieIN7QFMqdk/E9Xy84VN/oeWBzmb+/njAkTzx9uqRM35ko+/fZQRemyk8aL0utMfTJ+es7z4qh0mbChADTfKaFGBnl0e686JdP0XDkEZ90wnbkyFbF3WteO5njrAPzc8Q7da09VgzqdI5IENeRiNLqTNpt0aZZEDDLQtFtrubxHXKY3wCKQc+XNz5RBnjC/BjkZPBGinS/k0GDcW4lwNz5fjg/8Xq5t3I=
+  file: "$FRAMEWORK_NAME.framework.zip"
+  skip_cleanup: true
+  on:
+    repo: AckeeCZ/ReactiveLocation
+    tags: true
