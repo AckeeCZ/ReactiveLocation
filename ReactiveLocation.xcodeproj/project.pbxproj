@@ -21,6 +21,9 @@
 		69F73ECB1FF43E4D00E2DD85 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73EC91FF43E4D00E2DD85 /* ReactiveSwift.framework */; };
 		69F73ECC1FF43E4D00E2DD85 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73ECA1FF43E4D00E2DD85 /* Result.framework */; };
 		69F96A362155437B00E198F8 /* ReactiveLocationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F96A352155437B00E198F8 /* ReactiveLocationExtensions.swift */; };
+		69F96A382155464F00E198F8 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73EC91FF43E4D00E2DD85 /* ReactiveSwift.framework */; };
+		69F96A392155464F00E198F8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73ECA1FF43E4D00E2DD85 /* Result.framework */; };
+		69F96A3B215546C800E198F8 /* XCTestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F96A3A215546C800E198F8 /* XCTestExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,7 @@
 		69F73EC91FF43E4D00E2DD85 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		69F73ECA1FF43E4D00E2DD85 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		69F96A352155437B00E198F8 /* ReactiveLocationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveLocationExtensions.swift; sourceTree = "<group>"; };
+		69F96A3A215546C800E198F8 /* XCTestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69F96A382155464F00E198F8 /* ReactiveSwift.framework in Frameworks */,
+				69F96A392155464F00E198F8 /* Result.framework in Frameworks */,
 				69F73E991FF43CC200E2DD85 /* ReactiveLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +144,7 @@
 			children = (
 				69F73E9D1FF43CC200E2DD85 /* ReactiveLocationTests.swift */,
 				69F73E9F1FF43CC200E2DD85 /* Info.plist */,
+				69F96A3A215546C800E198F8 /* XCTestExtensions.swift */,
 			);
 			path = ReactiveLocationTests;
 			sourceTree = "<group>";
@@ -334,7 +341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -353,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69F96A3B215546C800E198F8 /* XCTestExtensions.swift in Sources */,
 				69F73E9E1FF43CC200E2DD85 /* ReactiveLocationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,6 +666,10 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -726,6 +738,10 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
