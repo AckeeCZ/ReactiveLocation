@@ -1,11 +1,3 @@
-//
-//  CLLocationManagerDelegate.swift
-//  Pods
-//
-//  Created by Jakub Olejník on 06/10/2016.
-//
-//
-
 import Foundation
 import CoreLocation
 import ReactiveSwift

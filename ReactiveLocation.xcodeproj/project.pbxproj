@@ -20,6 +20,7 @@
 		69F73EC21FF43DDC00E2DD85 /* ReactiveLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73E8F1FF43CC200E2DD85 /* ReactiveLocation.framework */; };
 		69F73ECB1FF43E4D00E2DD85 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73EC91FF43E4D00E2DD85 /* ReactiveSwift.framework */; };
 		69F73ECC1FF43E4D00E2DD85 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73ECA1FF43E4D00E2DD85 /* Result.framework */; };
+		69F96A362155437B00E198F8 /* ReactiveLocationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F96A352155437B00E198F8 /* ReactiveLocationExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		69F73EBF1FF43D3A00E2DD85 /* ReactiveLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveLocation.swift; sourceTree = "<group>"; };
 		69F73EC91FF43E4D00E2DD85 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		69F73ECA1FF43E4D00E2DD85 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		69F96A352155437B00E198F8 /* ReactiveLocationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveLocationExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				69F73EBF1FF43D3A00E2DD85 /* ReactiveLocation.swift */,
+				69F96A352155437B00E198F8 /* ReactiveLocationExtensions.swift */,
 				69F73EBE1FF43D3A00E2DD85 /* ReactiveLocationManagerDelegate.swift */,
 				69F73EBD1FF43CDE00E2DD85 /* Supporting files */,
 			);
@@ -342,6 +345,7 @@
 			files = (
 				69F73EC01FF43D3A00E2DD85 /* ReactiveLocationManagerDelegate.swift in Sources */,
 				69F73EC11FF43D3A00E2DD85 /* ReactiveLocation.swift in Sources */,
+				69F96A362155437B00E198F8 /* ReactiveLocationExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
