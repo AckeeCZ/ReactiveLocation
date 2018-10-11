@@ -47,20 +47,20 @@ public protocol ReactiveLocationService {
 }
 
 extension ReactiveLocationService {
-    public static func locationProducer(_ managerFactory: LocationManagerConfigureBlock? = nil) -> SignalProducer<CLLocation, LocationError> {
-        return locationProducer(managerFactory)
+    public static func locationProducer() -> SignalProducer<CLLocation, LocationError> {
+        return locationProducer(nil)
     }
-    public static func singleLocationProducer(_ managerFactory: LocationManagerConfigureBlock? = nil) -> SignalProducer<CLLocation, LocationError> {
-        return singleLocationProducer(managerFactory)
+    public static func singleLocationProducer() -> SignalProducer<CLLocation, LocationError> {
+        return singleLocationProducer(nil)
     }
-    public static func visitProducer(_ managerFactory: LocationManagerConfigureBlock? = nil) -> SignalProducer<CLVisit, LocationError> {
-        return visitProducer(managerFactory)
+    public static func visitProducer() -> SignalProducer<CLVisit, LocationError> {
+        return visitProducer(nil)
     }
-    public static func regionProducer(_ region: CLRegion, managerFactory: LocationManagerConfigureBlock? = nil) -> SignalProducer<RegionEvent, LocationError> {
-        return regionProducer(region, managerFactory: managerFactory)
+    public static func regionProducer(_ region: CLRegion) -> SignalProducer<RegionEvent, LocationError> {
+        return regionProducer(region, managerFactory: nil)
     }
-    public static func headingProducer(_ managerFactory: LocationManagerConfigureBlock? = nil) -> SignalProducer<CLHeading, LocationError> {
-        return headingProducer(managerFactory)
+    public static func headingProducer() -> SignalProducer<CLHeading, LocationError> {
+        return headingProducer(nil)
     }
 }
 
