@@ -16,7 +16,7 @@ before_deploy:
 - pod trunk push
 script:
 - carthage build --no-skip-current --platform iOS --cache-builds
-- pod lib lint || pod repo update && pod lib lint
+# - pod lib lint || pod repo update && pod lib lint
 deploy:
   provider: releases
   api_key:
