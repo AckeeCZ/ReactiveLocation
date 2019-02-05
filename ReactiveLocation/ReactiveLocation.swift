@@ -12,6 +12,8 @@ import ReactiveSwift
 
 public protocol ReactiveLocationService {
     var locationManager: CLLocationManager { get }
+    
+    func locationProducer() -> SignalProducer<CLLocation, NoError>
 }
 
 public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocationManagerDelegate {
