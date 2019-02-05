@@ -1,4 +1,4 @@
-osx_image: xcode9.4
+osx_image: xcode10.1
 language: objective-c
 env:
   global:
@@ -12,11 +12,10 @@ before_install:
 before_script:
 - carthage bootstrap --platform iOS --cache-builds
 before_deploy:
-- carthage build --no-skip-current --platform iOS --cache-builds
 - carthage archive $FRAMEWORK_NAME
 - pod trunk push
 script:
-- set -o pipefail && xcodebuild test -scheme ReactiveLocation -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=NO | xcpretty
+- carthage build --no-skip-current --platform iOS --cache-builds
 - pod lib lint || pod repo update && pod lib lint
 deploy:
   provider: releases

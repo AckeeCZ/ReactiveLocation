@@ -2,7 +2,8 @@
 //  ReactiveLocation.h
 //  ReactiveLocation
 //
-//  Created by Jakub Olejník on 27/12/2017.
+//  Created by Jakub Olejník on 05/02/2019.
+//  Copyright © 2019 Jakub Olejník. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
