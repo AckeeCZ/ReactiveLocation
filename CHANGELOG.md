@@ -7,3 +7,5 @@
 ```
 
 ## master
+
+- fix recursive calls when calling without parameters (#17, kudos to @olejnjak)
