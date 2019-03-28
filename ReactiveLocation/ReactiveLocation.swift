@@ -24,7 +24,7 @@ public func < (lhs: LocationAuthorizationLevel, rhs: LocationAuthorizationLevel)
 extension LocationAuthorizationLevel: Comparable { }
 
 public extension LocationAuthorizationLevel {
-    public init?(status: CLAuthorizationStatus) {
+    init?(status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways: self = .always
         case .authorizedWhenInUse: self = .whenInUse
@@ -70,7 +70,7 @@ internal extension CLLocationManager {
         static var DescriptiveName = "ack_delegate"
     }
 
-    internal var delegateObject: ReactiveLocationManagerDelegate? {
+    var delegateObject: ReactiveLocationManagerDelegate? {
         get {
             return objc_getAssociatedObject(self, &AssociatedKeys.DescriptiveName) as? ReactiveLocationManagerDelegate
         }
