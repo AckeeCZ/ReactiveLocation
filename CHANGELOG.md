@@ -8,4 +8,4 @@
 
 ## master
 
-- fix recursive calls when calling without parameters (#16, kudos to @olejnjak)
+- fix recursive calls when calling without parameters (#17, kudos to @olejnjak)
