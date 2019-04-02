@@ -8,6 +8,8 @@
 
 ## master
 
+## 4.0 beta 1
+
 - completely new version (#19, kudos to @olejnjak)
   - automatically asks for permissions
   - monitors observers and starts/stops updating location
