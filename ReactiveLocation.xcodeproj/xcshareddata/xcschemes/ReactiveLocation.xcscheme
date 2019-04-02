@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "1010"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "69F73E8E1FF43CC200E2DD85"
+               BlueprintIdentifier = "69B0E5452209FCCD009C5543"
                BuildableName = "ReactiveLocation.framework"
                BlueprintName = "ReactiveLocation"
                ReferencedContainer = "container:ReactiveLocation.xcodeproj">
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "69F73E971FF43CC200E2DD85"
-               BuildableName = "ReactiveLocationTests.xctest"
-               BlueprintName = "ReactiveLocationTests"
-               ReferencedContainer = "container:ReactiveLocation.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69F73E8E1FF43CC200E2DD85"
-            BuildableName = "ReactiveLocation.framework"
-            BlueprintName = "ReactiveLocation"
-            ReferencedContainer = "container:ReactiveLocation.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69F73E8E1FF43CC200E2DD85"
+            BlueprintIdentifier = "69B0E5452209FCCD009C5543"
             BuildableName = "ReactiveLocation.framework"
             BlueprintName = "ReactiveLocation"
             ReferencedContainer = "container:ReactiveLocation.xcodeproj">
@@ -82,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69F73E8E1FF43CC200E2DD85"
+            BlueprintIdentifier = "69B0E5452209FCCD009C5543"
             BuildableName = "ReactiveLocation.framework"
             BlueprintName = "ReactiveLocation"
             ReferencedContainer = "container:ReactiveLocation.xcodeproj">

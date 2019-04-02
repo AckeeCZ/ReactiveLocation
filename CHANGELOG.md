@@ -8,6 +8,11 @@
 
 ## master
 
+- completely new version (#19, kudos to @olejnjak)
+  - automatically asks for permissions
+  - monitors observers and starts/stops updating location
+  - fits better in dependency injection as it doesn't use static methods
+
 ## 3.2
 
 - fix recursive calls when calling without parameters (#17, kudos to @olejnjak)

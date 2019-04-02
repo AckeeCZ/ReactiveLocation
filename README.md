@@ -1,101 +1,58 @@
-![](http://img.ack.ee/default/image/test/ios_reactivelocation_logo.png)  
+![](.github/images/logo.png)
+
 [![Travis branch](https://img.shields.io/travis/AckeeCZ/ReactiveLocation/master.svg)](https://travis-ci.org/AckeeCZ/ReactiveLocation)
 [![Version](https://img.shields.io/cocoapods/v/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 [![License](https://img.shields.io/cocoapods/l/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 [![Platform](https://img.shields.io/cocoapods/p/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 
-## ReactiveSwift wrapper for CLLocationManager.
+## ReactiveSwift wrapper to observe location
 
-Our wrapper supports almost all operations on CLLocationManager. With factory method you can easily set up manager for your needs. By default we just set the desiredAccuracy on Best. You can even request for users permission with Action. Mocking support for tests via Protocol implementation.
+Our wrapper automatically asks for permission. It determines what kind of permission your app requires by checking the Info.plist of your app.
 
-### Available methods
-```swift
-static func locationProducer(_ managerFactory: LocationManagerConfigureBlock?) -> SignalProducer<CLLocation, LocationError>
-static func singleLocationProducer(_ managerFactory: LocationManagerConfigureBlock?) -> SignalProducer<CLLocation, LocationError>
-static func visitProducer(_ managerFactory: LocationManagerConfigureBlock?) -> SignalProducer<CLVisit, LocationError>
-static func regionProducer(_ region: CLRegion, managerFactory: LocationManagerConfigureBlock?) -> SignalProducer<RegionEvent, LocationError>
-static func headingProducer(_ managerFactory: LocationManagerConfigureBlock?) -> SignalProducer<CLHeading, LocationError>
-static var authorizeAction: Action<LocationAuthorizationLevel, LocationAuthorizationLevel, LocationAuthorizationError> { get }
-```
+By using our wrapper you can use a single instance of `CLLocationManager` and it will automatically start and stop updating location based on the number of observers so your app doesn't drain device battery unnecessarily.
 
-Difference versus location and singleLocation lies in ios9+ implementation of CLLocationManager's method `requestLocation` which takes care of the unneccesary logic and gets you just one precise location of the user. Producer itself holds strong reference on its own CLLocationManager so as long as Producer/Signal closure is alive so is its manager.
+## Example usage
 
-### Example Usage
-Simply retrieve user's current location
+For example usage you can check our example that is part of this repository. 
+
+For simplest cases you are provided a `shared` instance:
 
 ```swift
-ReactiveLocation.locationProducer().startWithResult {
-    switch $0 {
-    case let .success(location):
-        print(location)
-    case let .failure(error):
-        print(error)
-    }
+ReactiveLocation.shared.locationProducer().startWithValues { location in
+    print(location)
 }
 ```
 
-Simply retrieve location over time. With custom manager settings
+If you need more different setups for your `CLLocationManager` you can create additional instances simply by creating new instances of `ReactiveLocation` and adding your desired setup to the `locationManager` which is provided to you (but it's up to you to make sure that the instance is alive as long as you need it):
 
 ```swift
-ReactiveLocation.singleLocationProducer { manager in
-    manager.distanceFilter = 1000
-    manager.desiredAccuracy = kCLLocationAccuracyBest
-    }
-    .startWithResult {
-        switch $0 {
-        case let .success(location):
-            print(location)
-        case let .failure(error):
-            print(error)
-        }
+let reactiveLocation = ReactiveLocation()
+reactiveLocation.locationManager.distanceFilter = 100 // do your custom setup
+reactiveLocation.locationProducer().startWithValues {
+    print($0)
 }
+// store `reactiveLocation` instance somewhere
 ```
 
-Request user for WhenInUse permissions with result
+## Testing support
 
-```swift
-ReactiveLocation.authorizeAction.apply(.whenInUse).startWithResult {
-    switch $0 {
-    case let .success(status):
-        print("Current user permission status on WhenInUse is \(status)")
-    case let .failure(error):
-        print(error)
-    }
-}
-```
-
-## Testing Support
-
-`ReactiveLocation` conforms to `ReactiveLocationService` protocol. So if you would like to mock your own location and test functionality you can just Create your own MockImplementation that conforms to this protocol
-
-
-
-## Example
-
-In progresss
-
-## Requirements
-
-ReactiveSwift
+All features of `ReactiveLocation` are wrapped into `ReactiveLocationService` protocol so you should use this protocol as dependency inside your project so you're able to inject any testing implementation you like.
 
 ## Installation
 
-ReactiveLocation is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+`ReactiveLocation` is available through Carthage so adding it to your Cartfile works just fine.
+
+```ruby
+github "AckeeCZ/ReactiveLocation"
+```
+
+If you're not familiar with Carthage, we also support Cocoapods.
 
 ```ruby
 pod "ReactiveLocation"
 ```
 
-### Version compatibility
-
-ReactiveLocation requires Xcode 8+ and Swift 3. Older versions are supported in previous versions.
-
-| Swift Version | ReactiveLocationVersion |
-| ------------- | ------ |
-| 3.X           | master |
-| 2.X           | 1.0 |
-
+Well if you're not familiar with any dependency manager, you're free to integrate it manually. 😎 But keep in mind that we depend on `ReactiveSwift`.
 
 ## Forking this repository
 If you use ReactiveLocation in your projects drop us a tweet at [@ackeecz][1] or leave a star here on Github. We would love to hear about it!

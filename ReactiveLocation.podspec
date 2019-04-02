@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ReactiveLocation'
-  s.version          = '3.2'
+  s.version          = '4.0-beta.1'
   s.summary          = 'Simple yet powerful wrapper of CLLocationManager for ReactiveCocoa'
   s.description      = <<-DESC
 Simple yet powerful wrapper of CLLocationManager for ReactiveCocoa. With support of requestim permissions and obtaiining user's location. Heading, Regions and Visits.

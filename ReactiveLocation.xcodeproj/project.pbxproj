@@ -3,195 +3,182 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69F73E991FF43CC200E2DD85 /* ReactiveLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73E8F1FF43CC200E2DD85 /* ReactiveLocation.framework */; };
-		69F73E9E1FF43CC200E2DD85 /* ReactiveLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F73E9D1FF43CC200E2DD85 /* ReactiveLocationTests.swift */; };
-		69F73EA01FF43CC200E2DD85 /* ReactiveLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 69F73E921FF43CC200E2DD85 /* ReactiveLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		69F73EAE1FF43CD500E2DD85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F73EAD1FF43CD500E2DD85 /* AppDelegate.swift */; };
-		69F73EB01FF43CD500E2DD85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F73EAF1FF43CD500E2DD85 /* ViewController.swift */; };
-		69F73EB31FF43CD500E2DD85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69F73EB11FF43CD500E2DD85 /* Main.storyboard */; };
-		69F73EB51FF43CD500E2DD85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69F73EB41FF43CD500E2DD85 /* Assets.xcassets */; };
-		69F73EB81FF43CD500E2DD85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69F73EB61FF43CD500E2DD85 /* LaunchScreen.storyboard */; };
-		69F73EC01FF43D3A00E2DD85 /* ReactiveLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F73EBE1FF43D3A00E2DD85 /* ReactiveLocationManagerDelegate.swift */; };
-		69F73EC11FF43D3A00E2DD85 /* ReactiveLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F73EBF1FF43D3A00E2DD85 /* ReactiveLocation.swift */; };
-		69F73EC21FF43DDC00E2DD85 /* ReactiveLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73E8F1FF43CC200E2DD85 /* ReactiveLocation.framework */; };
-		69F73ECB1FF43E4D00E2DD85 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73EC91FF43E4D00E2DD85 /* ReactiveSwift.framework */; };
-		69F73ECC1FF43E4D00E2DD85 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73ECA1FF43E4D00E2DD85 /* Result.framework */; };
+		69B0E54B2209FCCD009C5543 /* ReactiveLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B0E5492209FCCD009C5543 /* ReactiveLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69B0E5532209FD04009C5543 /* ReactiveLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0E5522209FD04009C5543 /* ReactiveLocation.swift */; };
+		69B0E5552209FEBE009C5543 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 69B0E5542209FEBE009C5543 /* Cartfile */; };
+		69B0E5592209FF49009C5543 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5572209FF49009C5543 /* ReactiveSwift.framework */; };
+		69B0E55A2209FF49009C5543 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5582209FF49009C5543 /* Result.framework */; };
+		69B0E562220A08B8009C5543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0E561220A08B8009C5543 /* AppDelegate.swift */; };
+		69B0E564220A08B8009C5543 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0E563220A08B8009C5543 /* LocationViewController.swift */; };
+		69B0E567220A08B8009C5543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B0E565220A08B8009C5543 /* Main.storyboard */; };
+		69B0E569220A08B9009C5543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B0E568220A08B9009C5543 /* Assets.xcassets */; };
+		69B0E56C220A08B9009C5543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B0E56A220A08B9009C5543 /* LaunchScreen.storyboard */; };
+		69B0E571220A0A09009C5543 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5572209FF49009C5543 /* ReactiveSwift.framework */; };
+		69B0E572220A0A09009C5543 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5582209FF49009C5543 /* Result.framework */; };
+		69B0E574220A0A97009C5543 /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = 69B0E573220A0A97009C5543 /* Cartfile.private */; };
+		69B0E576220A0B46009C5543 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E575220A0B46009C5543 /* ReactiveCocoa.framework */; };
+		69B0E577220A0BA5009C5543 /* ReactiveLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5462209FCCD009C5543 /* ReactiveLocation.framework */; };
+		69B0E578220A0BA5009C5543 /* ReactiveLocation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5462209FCCD009C5543 /* ReactiveLocation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		69B0E57D220A14E0009C5543 /* BetterLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0E57C220A14E0009C5543 /* BetterLocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		69F2CB2D20839F2F00BE3C33 /* PBXContainerItemProxy */ = {
+		69B0E579220A0BA5009C5543 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 699676121FF43C7000986B37 /* Project object */;
+			containerPortal = 69B0E53D2209FCCD009C5543 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 69F73EAA1FF43CD500E2DD85;
-			remoteInfo = ReactiveLocationExample;
-		};
-		69F73E9A1FF43CC200E2DD85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 699676121FF43C7000986B37 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 69F73E8E1FF43CC200E2DD85;
-			remoteInfo = ReactiveLocation;
-		};
-		69F73EC41FF43DDC00E2DD85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 699676121FF43C7000986B37 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 69F73E8E1FF43CC200E2DD85;
+			remoteGlobalIDString = 69B0E5452209FCCD009C5543;
 			remoteInfo = ReactiveLocation;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		69B0E57B220A0BA6009C5543 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				69B0E578220A0BA5009C5543 /* ReactiveLocation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		6922F08221131575003474FC /* Cartfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Cartfile; sourceTree = "<group>"; };
-		69980CA0206419A900BC01E2 /* ReactiveLocation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = ReactiveLocation.podspec; sourceTree = "<group>"; };
-		69F73E8F1FF43CC200E2DD85 /* ReactiveLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		69F73E921FF43CC200E2DD85 /* ReactiveLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveLocation.h; sourceTree = "<group>"; };
-		69F73E931FF43CC200E2DD85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69F73E981FF43CC200E2DD85 /* ReactiveLocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveLocationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		69F73E9D1FF43CC200E2DD85 /* ReactiveLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveLocationTests.swift; sourceTree = "<group>"; };
-		69F73E9F1FF43CC200E2DD85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69F73EAB1FF43CD500E2DD85 /* ReactiveLocationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveLocationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		69F73EAD1FF43CD500E2DD85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		69F73EAF1FF43CD500E2DD85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		69F73EB21FF43CD500E2DD85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		69F73EB41FF43CD500E2DD85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		69F73EB71FF43CD500E2DD85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		69F73EB91FF43CD500E2DD85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69F73EBE1FF43D3A00E2DD85 /* ReactiveLocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveLocationManagerDelegate.swift; sourceTree = "<group>"; };
-		69F73EBF1FF43D3A00E2DD85 /* ReactiveLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveLocation.swift; sourceTree = "<group>"; };
-		69F73EC91FF43E4D00E2DD85 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
-		69F73ECA1FF43E4D00E2DD85 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		69B0E5462209FCCD009C5543 /* ReactiveLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69B0E5492209FCCD009C5543 /* ReactiveLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveLocation.h; sourceTree = "<group>"; };
+		69B0E54A2209FCCD009C5543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69B0E5522209FD04009C5543 /* ReactiveLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveLocation.swift; sourceTree = "<group>"; };
+		69B0E5542209FEBE009C5543 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		69B0E5572209FF49009C5543 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		69B0E5582209FF49009C5543 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		69B0E55F220A08B8009C5543 /* ReactiveLocationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveLocationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69B0E561220A08B8009C5543 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		69B0E563220A08B8009C5543 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		69B0E566220A08B8009C5543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		69B0E568220A08B9009C5543 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69B0E56B220A08B9009C5543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		69B0E56D220A08B9009C5543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69B0E573220A0A97009C5543 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
+		69B0E575220A0B46009C5543 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		69B0E57C220A14E0009C5543 /* BetterLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		69F73E8B1FF43CC200E2DD85 /* Frameworks */ = {
+		69B0E5432209FCCD009C5543 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69F73ECB1FF43E4D00E2DD85 /* ReactiveSwift.framework in Frameworks */,
-				69F73ECC1FF43E4D00E2DD85 /* Result.framework in Frameworks */,
+				69B0E5592209FF49009C5543 /* ReactiveSwift.framework in Frameworks */,
+				69B0E55A2209FF49009C5543 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		69F73E951FF43CC200E2DD85 /* Frameworks */ = {
+		69B0E55C220A08B8009C5543 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69F73E991FF43CC200E2DD85 /* ReactiveLocation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		69F73EA81FF43CD500E2DD85 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				69F73EC21FF43DDC00E2DD85 /* ReactiveLocation.framework in Frameworks */,
+				69B0E576220A0B46009C5543 /* ReactiveCocoa.framework in Frameworks */,
+				69B0E571220A0A09009C5543 /* ReactiveSwift.framework in Frameworks */,
+				69B0E577220A0BA5009C5543 /* ReactiveLocation.framework in Frameworks */,
+				69B0E572220A0A09009C5543 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		699676111FF43C7000986B37 = {
+		69B0E53C2209FCCD009C5543 = {
 			isa = PBXGroup;
 			children = (
-				6922F08221131575003474FC /* Cartfile */,
-				69980CA0206419A900BC01E2 /* ReactiveLocation.podspec */,
-				69F73E911FF43CC200E2DD85 /* ReactiveLocation */,
-				69F73E9C1FF43CC200E2DD85 /* ReactiveLocationTests */,
-				69F73EAC1FF43CD500E2DD85 /* ReactiveLocationExample */,
-				69F73E901FF43CC200E2DD85 /* Products */,
-				69F73EC81FF43E4C00E2DD85 /* Frameworks */,
+				69B0E5542209FEBE009C5543 /* Cartfile */,
+				69B0E573220A0A97009C5543 /* Cartfile.private */,
+				69B0E5482209FCCD009C5543 /* ReactiveLocation */,
+				69B0E560220A08B8009C5543 /* ReactiveLocationExample */,
+				69B0E5472209FCCD009C5543 /* Products */,
+				69B0E5562209FF49009C5543 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		69F73E901FF43CC200E2DD85 /* Products */ = {
+		69B0E5472209FCCD009C5543 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				69F73E8F1FF43CC200E2DD85 /* ReactiveLocation.framework */,
-				69F73E981FF43CC200E2DD85 /* ReactiveLocationTests.xctest */,
-				69F73EAB1FF43CD500E2DD85 /* ReactiveLocationExample.app */,
+				69B0E5462209FCCD009C5543 /* ReactiveLocation.framework */,
+				69B0E55F220A08B8009C5543 /* ReactiveLocationExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		69F73E911FF43CC200E2DD85 /* ReactiveLocation */ = {
+		69B0E5482209FCCD009C5543 /* ReactiveLocation */ = {
 			isa = PBXGroup;
 			children = (
-				69F73EBF1FF43D3A00E2DD85 /* ReactiveLocation.swift */,
-				69F73EBE1FF43D3A00E2DD85 /* ReactiveLocationManagerDelegate.swift */,
-				69F73EBD1FF43CDE00E2DD85 /* Supporting files */,
+				69B0E57C220A14E0009C5543 /* BetterLocationManager.swift */,
+				69B0E5522209FD04009C5543 /* ReactiveLocation.swift */,
+				69B0E5512209FCED009C5543 /* Supporting files */,
 			);
 			path = ReactiveLocation;
 			sourceTree = "<group>";
 		};
-		69F73E9C1FF43CC200E2DD85 /* ReactiveLocationTests */ = {
+		69B0E5512209FCED009C5543 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				69F73E9D1FF43CC200E2DD85 /* ReactiveLocationTests.swift */,
-				69F73E9F1FF43CC200E2DD85 /* Info.plist */,
-			);
-			path = ReactiveLocationTests;
-			sourceTree = "<group>";
-		};
-		69F73EAC1FF43CD500E2DD85 /* ReactiveLocationExample */ = {
-			isa = PBXGroup;
-			children = (
-				69F73EAD1FF43CD500E2DD85 /* AppDelegate.swift */,
-				69F73EAF1FF43CD500E2DD85 /* ViewController.swift */,
-				69F73EB11FF43CD500E2DD85 /* Main.storyboard */,
-				69F73EB41FF43CD500E2DD85 /* Assets.xcassets */,
-				69F73EB61FF43CD500E2DD85 /* LaunchScreen.storyboard */,
-				69F73EB91FF43CD500E2DD85 /* Info.plist */,
-			);
-			path = ReactiveLocationExample;
-			sourceTree = "<group>";
-		};
-		69F73EBD1FF43CDE00E2DD85 /* Supporting files */ = {
-			isa = PBXGroup;
-			children = (
-				69F73E921FF43CC200E2DD85 /* ReactiveLocation.h */,
-				69F73E931FF43CC200E2DD85 /* Info.plist */,
+				69B0E5492209FCCD009C5543 /* ReactiveLocation.h */,
+				69B0E54A2209FCCD009C5543 /* Info.plist */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
 		};
-		69F73EC81FF43E4C00E2DD85 /* Frameworks */ = {
+		69B0E5562209FF49009C5543 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				69F73EC91FF43E4D00E2DD85 /* ReactiveSwift.framework */,
-				69F73ECA1FF43E4D00E2DD85 /* Result.framework */,
+				69B0E575220A0B46009C5543 /* ReactiveCocoa.framework */,
+				69B0E5572209FF49009C5543 /* ReactiveSwift.framework */,
+				69B0E5582209FF49009C5543 /* Result.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69B0E560220A08B8009C5543 /* ReactiveLocationExample */ = {
+			isa = PBXGroup;
+			children = (
+				69B0E561220A08B8009C5543 /* AppDelegate.swift */,
+				69B0E563220A08B8009C5543 /* LocationViewController.swift */,
+				69B0E565220A08B8009C5543 /* Main.storyboard */,
+				69B0E568220A08B9009C5543 /* Assets.xcassets */,
+				69B0E56A220A08B9009C5543 /* LaunchScreen.storyboard */,
+				69B0E56D220A08B9009C5543 /* Info.plist */,
+			);
+			path = ReactiveLocationExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		69F73E8C1FF43CC200E2DD85 /* Headers */ = {
+		69B0E5412209FCCD009C5543 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69F73EA01FF43CC200E2DD85 /* ReactiveLocation.h in Headers */,
+				69B0E54B2209FCCD009C5543 /* ReactiveLocation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		69F73E8E1FF43CC200E2DD85 /* ReactiveLocation */ = {
+		69B0E5452209FCCD009C5543 /* ReactiveLocation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69F73EA51FF43CC200E2DD85 /* Build configuration list for PBXNativeTarget "ReactiveLocation" */;
+			buildConfigurationList = 69B0E54E2209FCCD009C5543 /* Build configuration list for PBXNativeTarget "ReactiveLocation" */;
 			buildPhases = (
-				69F73E8A1FF43CC200E2DD85 /* Sources */,
-				69F73E8B1FF43CC200E2DD85 /* Frameworks */,
-				69F73E8C1FF43CC200E2DD85 /* Headers */,
-				69F73E8D1FF43CC200E2DD85 /* Resources */,
+				69B0E5412209FCCD009C5543 /* Headers */,
+				69B0E5422209FCCD009C5543 /* Sources */,
+				69B0E5432209FCCD009C5543 /* Frameworks */,
+				69B0E5442209FCCD009C5543 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -199,200 +186,155 @@
 			);
 			name = ReactiveLocation;
 			productName = ReactiveLocation;
-			productReference = 69F73E8F1FF43CC200E2DD85 /* ReactiveLocation.framework */;
+			productReference = 69B0E5462209FCCD009C5543 /* ReactiveLocation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		69F73E971FF43CC200E2DD85 /* ReactiveLocationTests */ = {
+		69B0E55E220A08B8009C5543 /* ReactiveLocationExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69F73EA61FF43CC200E2DD85 /* Build configuration list for PBXNativeTarget "ReactiveLocationTests" */;
+			buildConfigurationList = 69B0E56E220A08B9009C5543 /* Build configuration list for PBXNativeTarget "ReactiveLocationExample" */;
 			buildPhases = (
-				69F73E941FF43CC200E2DD85 /* Sources */,
-				69F73E951FF43CC200E2DD85 /* Frameworks */,
-				69F73E961FF43CC200E2DD85 /* Resources */,
+				69B0E55B220A08B8009C5543 /* Sources */,
+				69B0E55C220A08B8009C5543 /* Frameworks */,
+				69B0E55D220A08B8009C5543 /* Resources */,
+				GNRI5NAUTB7NFM7LVJCVFXNT /* Carthage */,
+				69B0E57B220A0BA6009C5543 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				69F73E9B1FF43CC200E2DD85 /* PBXTargetDependency */,
-				69F2CB2E20839F2F00BE3C33 /* PBXTargetDependency */,
-			);
-			name = ReactiveLocationTests;
-			productName = ReactiveLocationTests;
-			productReference = 69F73E981FF43CC200E2DD85 /* ReactiveLocationTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		69F73EAA1FF43CD500E2DD85 /* ReactiveLocationExample */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 69F73EBA1FF43CD500E2DD85 /* Build configuration list for PBXNativeTarget "ReactiveLocationExample" */;
-			buildPhases = (
-				69F73EA71FF43CD500E2DD85 /* Sources */,
-				69F73EA81FF43CD500E2DD85 /* Frameworks */,
-				69F73EA91FF43CD500E2DD85 /* Resources */,
-				69980C9F2064192B00BC01E2 /* [Carthage] Copy frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				69F73EC51FF43DDC00E2DD85 /* PBXTargetDependency */,
+				69B0E57A220A0BA5009C5543 /* PBXTargetDependency */,
 			);
 			name = ReactiveLocationExample;
 			productName = ReactiveLocationExample;
-			productReference = 69F73EAB1FF43CD500E2DD85 /* ReactiveLocationExample.app */;
+			productReference = 69B0E55F220A08B8009C5543 /* ReactiveLocationExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		699676121FF43C7000986B37 /* Project object */ = {
+		69B0E53D2209FCCD009C5543 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 1020;
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Jakub Olejník";
 				TargetAttributes = {
-					69F73E8E1FF43CC200E2DD85 = {
-						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
-						ProvisioningStyle = Manual;
+					69B0E5452209FCCD009C5543 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
-					69F73E971FF43CC200E2DD85 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
-						TestTargetID = 69F73EAA1FF43CD500E2DD85;
-					};
-					69F73EAA1FF43CD500E2DD85 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+					69B0E55E220A08B8009C5543 = {
+						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
-			buildConfigurationList = 699676151FF43C7000986B37 /* Build configuration list for PBXProject "ReactiveLocation" */;
-			compatibilityVersion = "Xcode 8.0";
+			buildConfigurationList = 69B0E5402209FCCD009C5543 /* Build configuration list for PBXProject "ReactiveLocation" */;
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 699676111FF43C7000986B37;
-			productRefGroup = 69F73E901FF43CC200E2DD85 /* Products */;
+			mainGroup = 69B0E53C2209FCCD009C5543;
+			productRefGroup = 69B0E5472209FCCD009C5543 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				69F73E8E1FF43CC200E2DD85 /* ReactiveLocation */,
-				69F73E971FF43CC200E2DD85 /* ReactiveLocationTests */,
-				69F73EAA1FF43CD500E2DD85 /* ReactiveLocationExample */,
+				69B0E5452209FCCD009C5543 /* ReactiveLocation */,
+				69B0E55E220A08B8009C5543 /* ReactiveLocationExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		69F73E8D1FF43CC200E2DD85 /* Resources */ = {
+		69B0E5442209FCCD009C5543 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B0E5552209FEBE009C5543 /* Cartfile in Resources */,
+				69B0E574220A0A97009C5543 /* Cartfile.private in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		69F73E961FF43CC200E2DD85 /* Resources */ = {
+		69B0E55D220A08B8009C5543 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		69F73EA91FF43CD500E2DD85 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				69F73EB81FF43CD500E2DD85 /* LaunchScreen.storyboard in Resources */,
-				69F73EB51FF43CD500E2DD85 /* Assets.xcassets in Resources */,
-				69F73EB31FF43CD500E2DD85 /* Main.storyboard in Resources */,
+				69B0E56C220A08B9009C5543 /* LaunchScreen.storyboard in Resources */,
+				69B0E569220A08B9009C5543 /* Assets.xcassets in Resources */,
+				69B0E567220A08B8009C5543 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		69980C9F2064192B00BC01E2 /* [Carthage] Copy frameworks */ = {
+		GNRI5NAUTB7NFM7LVJCVFXNT /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
+			inputFileListPaths = (
+				"$(SRCROOT)/Carthage/xcfilelists/ReactiveLocationExample-inputPaths.xcfilelist",
 			);
-			name = "[Carthage] Copy frameworks";
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/Carthage/xcfilelists/ReactiveLocationExample-outputPaths.xcfilelist",
+			);
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		69F73E8A1FF43CC200E2DD85 /* Sources */ = {
+		69B0E5422209FCCD009C5543 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69F73EC01FF43D3A00E2DD85 /* ReactiveLocationManagerDelegate.swift in Sources */,
-				69F73EC11FF43D3A00E2DD85 /* ReactiveLocation.swift in Sources */,
+				69B0E57D220A14E0009C5543 /* BetterLocationManager.swift in Sources */,
+				69B0E5532209FD04009C5543 /* ReactiveLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		69F73E941FF43CC200E2DD85 /* Sources */ = {
+		69B0E55B220A08B8009C5543 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69F73E9E1FF43CC200E2DD85 /* ReactiveLocationTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		69F73EA71FF43CD500E2DD85 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				69F73EB01FF43CD500E2DD85 /* ViewController.swift in Sources */,
-				69F73EAE1FF43CD500E2DD85 /* AppDelegate.swift in Sources */,
+				69B0E564220A08B8009C5543 /* LocationViewController.swift in Sources */,
+				69B0E562220A08B8009C5543 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		69F2CB2E20839F2F00BE3C33 /* PBXTargetDependency */ = {
+		69B0E57A220A0BA5009C5543 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 69F73EAA1FF43CD500E2DD85 /* ReactiveLocationExample */;
-			targetProxy = 69F2CB2D20839F2F00BE3C33 /* PBXContainerItemProxy */;
-		};
-		69F73E9B1FF43CC200E2DD85 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 69F73E8E1FF43CC200E2DD85 /* ReactiveLocation */;
-			targetProxy = 69F73E9A1FF43CC200E2DD85 /* PBXContainerItemProxy */;
-		};
-		69F73EC51FF43DDC00E2DD85 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 69F73E8E1FF43CC200E2DD85 /* ReactiveLocation */;
-			targetProxy = 69F73EC41FF43DDC00E2DD85 /* PBXContainerItemProxy */;
+			target = 69B0E5452209FCCD009C5543 /* ReactiveLocation */;
+			targetProxy = 69B0E579220A0BA5009C5543 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		69F73EB11FF43CD500E2DD85 /* Main.storyboard */ = {
+		69B0E565220A08B8009C5543 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				69F73EB21FF43CD500E2DD85 /* Base */,
+				69B0E566220A08B8009C5543 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		69F73EB61FF43CD500E2DD85 /* LaunchScreen.storyboard */ = {
+		69B0E56A220A08B9009C5543 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				69F73EB71FF43CD500E2DD85 /* Base */,
+				69B0E56B220A08B9009C5543 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -400,14 +342,24 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		699676161FF43C7000986B37 /* Debug */ = {
+		69B0E54C2209FCCD009C5543 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -415,34 +367,64 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		699676171FF43C7000986B37 /* Release */ = {
+		69B0E54D2209FCCD009C5543 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -450,465 +432,174 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		69F73EA11FF43CC200E2DD85 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/ReactiveLocation/Supporting files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.ReactiveLocation;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		69F73EA21FF43CC200E2DD85 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/ReactiveLocation/Supporting files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.ReactiveLocation;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		69F73EA31FF43CC200E2DD85 /* Debug */ = {
+		69B0E54F2209FCCD009C5543 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = ReactiveLocationTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.ReactiveLocationTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "$(SRCROOT)/ReactiveLocation/Supporting files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cz.olejnjak.ReactiveLocation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactiveLocationExample.app/ReactiveLocationExample";
 			};
 			name = Debug;
 		};
-		69F73EA41FF43CC200E2DD85 /* Release */ = {
+		69B0E5502209FCCD009C5543 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = ReactiveLocationTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.ReactiveLocationTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/ReactiveLocation/Supporting files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cz.olejnjak.ReactiveLocation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactiveLocationExample.app/ReactiveLocationExample";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		69F73EBB1FF43CD500E2DD85 /* Debug */ = {
+		69B0E56F220A08B9009C5543 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ReactiveLocationExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.ReactiveLocationExample;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cz.olejnjak.ReactiveLocationExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		69F73EBC1FF43CD500E2DD85 /* Release */ = {
+		69B0E570220A08B9009C5543 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReactiveLocationExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.ReactiveLocationExample;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cz.olejnjak.ReactiveLocationExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		699676151FF43C7000986B37 /* Build configuration list for PBXProject "ReactiveLocation" */ = {
+		69B0E5402209FCCD009C5543 /* Build configuration list for PBXProject "ReactiveLocation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				699676161FF43C7000986B37 /* Debug */,
-				699676171FF43C7000986B37 /* Release */,
+				69B0E54C2209FCCD009C5543 /* Debug */,
+				69B0E54D2209FCCD009C5543 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69F73EA51FF43CC200E2DD85 /* Build configuration list for PBXNativeTarget "ReactiveLocation" */ = {
+		69B0E54E2209FCCD009C5543 /* Build configuration list for PBXNativeTarget "ReactiveLocation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				69F73EA11FF43CC200E2DD85 /* Debug */,
-				69F73EA21FF43CC200E2DD85 /* Release */,
+				69B0E54F2209FCCD009C5543 /* Debug */,
+				69B0E5502209FCCD009C5543 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69F73EA61FF43CC200E2DD85 /* Build configuration list for PBXNativeTarget "ReactiveLocationTests" */ = {
+		69B0E56E220A08B9009C5543 /* Build configuration list for PBXNativeTarget "ReactiveLocationExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				69F73EA31FF43CC200E2DD85 /* Debug */,
-				69F73EA41FF43CC200E2DD85 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		69F73EBA1FF43CD500E2DD85 /* Build configuration list for PBXNativeTarget "ReactiveLocationExample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				69F73EBB1FF43CD500E2DD85 /* Debug */,
-				69F73EBC1FF43CD500E2DD85 /* Release */,
+				69B0E56F220A08B9009C5543 /* Debug */,
+				69B0E570220A08B9009C5543 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 699676121FF43C7000986B37 /* Project object */;
+	rootObject = 69B0E53D2209FCCD009C5543 /* Project object */;
 }
