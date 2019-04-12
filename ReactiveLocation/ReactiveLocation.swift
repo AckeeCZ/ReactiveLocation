@@ -18,13 +18,14 @@ public protocol ReactiveLocationService {
 
 public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocationManagerDelegate {
     public static let shared = ReactiveLocation()
+    public typealias RequestPermissionCallback = (CLLocationManager) -> ()
     
     public var locationManager: CLLocationManager { return _locationManager }
     public var isVerbose = false
-    public var requestPermission: (CLLocationManager) -> () = { _ in }
     
     private let _locationManager: BetterLocationManager
     private let observerLock = NSLock()
+    private let requestPermission: RequestPermissionCallback
     
     private var observerCount = 0 {
         didSet {
@@ -60,8 +61,9 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
     
     // MARK: - Initializers
     
-    public override init() {
+    public init(requestPermission rp: @escaping RequestPermissionCallback) {
         _locationManager = BetterLocationManager()
+        requestPermission = rp
         super.init()
         locationManager.delegate = self
     }
