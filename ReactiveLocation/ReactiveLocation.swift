@@ -21,6 +21,7 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
     
     public var locationManager: CLLocationManager { return _locationManager }
     public var isVerbose = false
+    public var requestPermission: (CLLocationManager) -> () = { _ in }
     
     private let _locationManager: BetterLocationManager
     private let observerLock = NSLock()
@@ -98,15 +99,7 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
                 return
             }
             
-            if Bundle.main.object(forInfoDictionaryKey: "NSLocationAlwaysAndWhenInUseUsageDescription") != nil {
-                locationManager.requestAlwaysAuthorization()
-            } else if Bundle.main.object(forInfoDictionaryKey: "NSLocationUsageDescription") != nil {
-                locationManager.requestAlwaysAuthorization()
-            } else if Bundle.main.object(forInfoDictionaryKey: "NSLocationAlwaysUsageDescription") != nil {
-                locationManager.requestAlwaysAuthorization()
-            } else if Bundle.main.object(forInfoDictionaryKey: "NSLocationWhenInUseUsageDescription") != nil {
-                locationManager.requestWhenInUseAuthorization()
-            }
+            self?.requestPermission(locationManager)
             observer.send(value: ())
             observer.sendCompleted()
         }
