@@ -17,7 +17,6 @@ public protocol ReactiveLocationService {
 }
 
 public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocationManagerDelegate {
-    public static let shared = ReactiveLocation()
     public typealias RequestPermissionCallback = (CLLocationManager) -> ()
     
     public var locationManager: CLLocationManager { return _locationManager }
