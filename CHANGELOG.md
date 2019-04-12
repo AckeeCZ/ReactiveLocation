@@ -8,6 +8,8 @@
 
 ## master
 
+- move location permission request out of _ReactiveLocation_ (#22, kudos to @olejnjak)
+
 ## 4.0 beta 1
 
 - completely new version (#19, kudos to @olejnjak)
