@@ -9,12 +9,14 @@
 import UIKit
 import ReactiveLocation
 
+let reactiveLocation = ReactiveLocation { $0.requestWhenInUseAuthorization() } // but do your DI properly ☝️
+
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        ReactiveLocation.shared.isVerbose = true
+        reactiveLocation.isVerbose = true
         return true
     }
 }

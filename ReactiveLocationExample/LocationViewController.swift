@@ -26,7 +26,7 @@ final class LocationViewController: UIViewController {
     // MARK: - Private helpers
     
     private func setupBindings() {
-        let coordinate = ReactiveLocation.shared.locationProducer()
+        let coordinate = reactiveLocation.locationProducer()
             .map { $0.coordinate }
         
         locationLabel.reactive.text <~ coordinate.map { String($0.latitude) + "," + String($0.longitude) }
