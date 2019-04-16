@@ -1,4 +1,4 @@
-![](.github/images/logo.png)
+![](Logo.png)
 
 [![Travis branch](https://img.shields.io/travis/AckeeCZ/ReactiveLocation/master.svg)](https://travis-ci.org/AckeeCZ/ReactiveLocation)
 [![Version](https://img.shields.io/cocoapods/v/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
