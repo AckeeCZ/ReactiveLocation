@@ -13,7 +13,11 @@ import ReactiveSwift
 public protocol ReactiveLocationService {
     var locationManager: CLLocationManager { get }
     
+    /// Receive location updates
     func locationProducer() -> SignalProducer<CLLocation, NoError>
+    
+    /// Receive single location or nil if it is not available within `timeout`
+    func singleLocation(timeout: TimeInterval) -> SignalProducer<CLLocation?, NoError>
 }
 
 public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocationManagerDelegate {
@@ -76,6 +80,14 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
             .then(SignalProducer(locationSignal))
             .on(started: { [weak self] in self?.observerCount += 1 },
                 terminated: { [weak self] in self?.observerCount -= 1 })
+    }
+    
+    public func singleLocation(timeout: TimeInterval) -> SignalProducer<CLLocation?, NoError> {
+        return SignalProducer(locationSignal).map { $0 }.take(first: 1)
+            .on(started: { [weak self] in self?.observerCount += 1 },
+                terminated: { [weak self] in self?.observerCount -= 1 })
+            .timeout(after: timeout, raising: NSError(domain: "ReactiveLocation", code: 0, userInfo: nil), on: QueueScheduler())
+            .flatMapError { _ in SignalProducer(value: nil) }
     }
     
     // MARK: - CLLocationManager delegate
