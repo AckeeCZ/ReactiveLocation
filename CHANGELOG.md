@@ -1,12 +1,14 @@
 # Changelog
 
-- please enter new entries in format 
+- please enter new entries in format to **master** section
 
 ```
 - <description> (#<PR_number>, kudos to @<author>)
 ```
 
 ## master
+
+## 4.0 beta 2
 
 - move location permission request out of _ReactiveLocation_ (#22, kudos to @olejnjak)
 - add single location producer that returns `nil` if timeout occurs (#23, kudos to @olejnjak)
