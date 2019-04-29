@@ -11,6 +11,6 @@ DESC
   s.source           = { :git => 'https://github.com/AckeeCZ/ReactiveLocation.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
   s.source_files = 'ReactiveLocation/*.swift'
-  s.dependency 'ReactiveSwift', '~> 5.0'
+  s.dependency 'ReactiveSwift', '~> 6.0'
   s.swift_version    = '5.0'
 end

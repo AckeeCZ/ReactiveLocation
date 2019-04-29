@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69070139227710C700ABBE77 /* ReactiveLocation.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 69070138227710C700ABBE77 /* ReactiveLocation.podspec */; };
 		69B0E54B2209FCCD009C5543 /* ReactiveLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B0E5492209FCCD009C5543 /* ReactiveLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69B0E5532209FD04009C5543 /* ReactiveLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0E5522209FD04009C5543 /* ReactiveLocation.swift */; };
 		69B0E5552209FEBE009C5543 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 69B0E5542209FEBE009C5543 /* Cartfile */; };
 		69B0E5592209FF49009C5543 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5572209FF49009C5543 /* ReactiveSwift.framework */; };
-		69B0E55A2209FF49009C5543 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5582209FF49009C5543 /* Result.framework */; };
 		69B0E562220A08B8009C5543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0E561220A08B8009C5543 /* AppDelegate.swift */; };
 		69B0E564220A08B8009C5543 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0E563220A08B8009C5543 /* LocationViewController.swift */; };
 		69B0E567220A08B8009C5543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B0E565220A08B8009C5543 /* Main.storyboard */; };
 		69B0E569220A08B9009C5543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B0E568220A08B9009C5543 /* Assets.xcassets */; };
 		69B0E56C220A08B9009C5543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B0E56A220A08B9009C5543 /* LaunchScreen.storyboard */; };
 		69B0E571220A0A09009C5543 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5572209FF49009C5543 /* ReactiveSwift.framework */; };
-		69B0E572220A0A09009C5543 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5582209FF49009C5543 /* Result.framework */; };
 		69B0E574220A0A97009C5543 /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = 69B0E573220A0A97009C5543 /* Cartfile.private */; };
 		69B0E576220A0B46009C5543 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E575220A0B46009C5543 /* ReactiveCocoa.framework */; };
 		69B0E577220A0BA5009C5543 /* ReactiveLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5462209FCCD009C5543 /* ReactiveLocation.framework */; };
@@ -51,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		69070138227710C700ABBE77 /* ReactiveLocation.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReactiveLocation.podspec; sourceTree = "<group>"; };
 		69B0E5462209FCCD009C5543 /* ReactiveLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B0E5492209FCCD009C5543 /* ReactiveLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveLocation.h; sourceTree = "<group>"; };
 		69B0E54A2209FCCD009C5543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,7 +76,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				69B0E5592209FF49009C5543 /* ReactiveSwift.framework in Frameworks */,
-				69B0E55A2209FF49009C5543 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +86,6 @@
 				69B0E576220A0B46009C5543 /* ReactiveCocoa.framework in Frameworks */,
 				69B0E571220A0A09009C5543 /* ReactiveSwift.framework in Frameworks */,
 				69B0E577220A0BA5009C5543 /* ReactiveLocation.framework in Frameworks */,
-				69B0E572220A0A09009C5543 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +97,7 @@
 			children = (
 				69B0E5542209FEBE009C5543 /* Cartfile */,
 				69B0E573220A0A97009C5543 /* Cartfile.private */,
+				69070138227710C700ABBE77 /* ReactiveLocation.podspec */,
 				69B0E5482209FCCD009C5543 /* ReactiveLocation */,
 				69B0E560220A08B8009C5543 /* ReactiveLocationExample */,
 				69B0E5472209FCCD009C5543 /* Products */,
@@ -254,6 +253,7 @@
 			files = (
 				69B0E5552209FEBE009C5543 /* Cartfile in Resources */,
 				69B0E574220A0A97009C5543 /* Cartfile.private in Resources */,
+				69070139227710C700ABBE77 /* ReactiveLocation.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +288,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
