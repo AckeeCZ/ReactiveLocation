@@ -6,7 +6,6 @@
 //  Copyright © 2019 Jakub Olejník. All rights reserved.
 //
 
-import Result
 import CoreLocation
 import ReactiveSwift
 
@@ -14,10 +13,10 @@ public protocol ReactiveLocationService {
     var locationManager: CLLocationManager { get }
     
     /// Receive location updates
-    func locationProducer() -> SignalProducer<CLLocation, NoError>
+    func locationProducer() -> SignalProducer<CLLocation, Never>
     
     /// Receive single location or nil if it is not available within `timeout`
-    func singleLocation(timeout: TimeInterval) -> SignalProducer<CLLocation?, NoError>
+    func singleLocation(timeout: TimeInterval) -> SignalProducer<CLLocation?, Never>
 }
 
 public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocationManagerDelegate {
@@ -60,7 +59,7 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
         return status  == .authorizedAlways || status == .authorizedWhenInUse
     }
     
-    private let (locationSignal, locationObserver) = Signal<CLLocation, NoError>.pipe()
+    private let (locationSignal, locationObserver) = Signal<CLLocation, Never>.pipe()
     
     // MARK: - Initializers
     
@@ -73,7 +72,7 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
     
     // MARK: - Public interface
     
-    public func locationProducer() -> SignalProducer<CLLocation, NoError> {
+    public func locationProducer() -> SignalProducer<CLLocation, Never> {
         let currentValueProducer = SignalProducer(value: locationManager.location).skipNil()
         return currentValueProducer
             .then(requestPermissionProducer())
@@ -82,7 +81,7 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
                 terminated: { [weak self] in self?.observerCount -= 1 })
     }
     
-    public func singleLocation(timeout: TimeInterval) -> SignalProducer<CLLocation?, NoError> {
+    public func singleLocation(timeout: TimeInterval) -> SignalProducer<CLLocation?, Never> {
         return SignalProducer(locationSignal).map { $0 }.take(first: 1)
             .on(started: { [weak self] in self?.observerCount += 1 },
                 terminated: { [weak self] in self?.observerCount -= 1 })
@@ -104,7 +103,7 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
     
     // MARK: - Private helpers
     
-    private func requestPermissionProducer() -> SignalProducer<Void, NoError> {
+    private func requestPermissionProducer() -> SignalProducer<Void, Never> {
         return SignalProducer { [weak self] observer, _ in
             guard CLLocationManager.authorizationStatus() == .notDetermined, let locationManager = self?.locationManager else {
                 observer.send(value: ())
