@@ -8,6 +8,7 @@
 
 ## master
 
+- update ReactiveSwift to 6.1.0 (#26, kudos to @fortmarek)
 - update ReactiveSwift to 6.0, ReactiveCocoa to 10.0, remove Result as native Result is used (#24, kudos to @olejnjak)
 
 ## 4.0 beta 2
