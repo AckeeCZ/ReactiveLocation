@@ -9,30 +9,29 @@
 import Foundation
 import CoreLocation
 import ReactiveSwift
-import Result
 
 internal class ReactiveLocationManagerDelegate: NSObject, CLLocationManagerDelegate {
     
-    private let didChangeAuthorizationStatusPipe = Signal<CLAuthorizationStatus, NoError>.pipe()
-    internal lazy var didChangeAuthorizationStatus: Signal<CLAuthorizationStatus, NoError> = self.didChangeAuthorizationStatusPipe.0
+    private let didChangeAuthorizationStatusPipe = Signal<CLAuthorizationStatus, Never>.pipe()
+    internal lazy var didChangeAuthorizationStatus: Signal<CLAuthorizationStatus, Never> = self.didChangeAuthorizationStatusPipe.0
     
-    private let didFailPipe = Signal<Error, NoError>.pipe()
-    internal lazy var didFail: Signal<Error, NoError> = self.didFailPipe.0
+    private let didFailPipe = Signal<Error, Never>.pipe()
+    internal lazy var didFail: Signal<Error, Never> = self.didFailPipe.0
     
-    private let didUpdateLocationsPipe = Signal<[CLLocation], NoError>.pipe()
-    internal lazy var didUpdateLocations: Signal<[CLLocation], NoError> = self.didUpdateLocationsPipe.0
+    private let didUpdateLocationsPipe = Signal<[CLLocation], Never>.pipe()
+    internal lazy var didUpdateLocations: Signal<[CLLocation], Never> = self.didUpdateLocationsPipe.0
     
-    private let didUpdateHeadingPipe = Signal<CLHeading, NoError>.pipe()
-    internal lazy var didUpdateHeading: Signal<CLHeading, NoError> = self.didUpdateHeadingPipe.0
+    private let didUpdateHeadingPipe = Signal<CLHeading, Never>.pipe()
+    internal lazy var didUpdateHeading: Signal<CLHeading, Never> = self.didUpdateHeadingPipe.0
     
-    private let didVisitPipe = Signal<CLVisit, NoError>.pipe()
-    internal lazy var didVisit: Signal<CLVisit, NoError> = self.didVisitPipe.0
+    private let didVisitPipe = Signal<CLVisit, Never>.pipe()
+    internal lazy var didVisit: Signal<CLVisit, Never> = self.didVisitPipe.0
     
-    private let didEnterRegionPipe = Signal<CLRegion,NoError>.pipe()
-    internal lazy var didEnterRegion: Signal<CLRegion,NoError> = self.didEnterRegionPipe.0
+    private let didEnterRegionPipe = Signal<CLRegion,Never>.pipe()
+    internal lazy var didEnterRegion: Signal<CLRegion,Never> = self.didEnterRegionPipe.0
     
-    private let didExitRegionPipe = Signal<CLRegion,NoError>.pipe()
-    internal lazy var didExitRegion: Signal<CLRegion,NoError> = self.didExitRegionPipe.0
+    private let didExitRegionPipe = Signal<CLRegion,Never>.pipe()
+    internal lazy var didExitRegion: Signal<CLRegion,Never> = self.didExitRegionPipe.0
     
     internal func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         didChangeAuthorizationStatusPipe.1.send(value: status)

@@ -19,7 +19,6 @@
 		69F73EC11FF43D3A00E2DD85 /* ReactiveLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F73EBF1FF43D3A00E2DD85 /* ReactiveLocation.swift */; };
 		69F73EC21FF43DDC00E2DD85 /* ReactiveLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73E8F1FF43CC200E2DD85 /* ReactiveLocation.framework */; };
 		69F73ECB1FF43E4D00E2DD85 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73EC91FF43E4D00E2DD85 /* ReactiveSwift.framework */; };
-		69F73ECC1FF43E4D00E2DD85 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F73ECA1FF43E4D00E2DD85 /* Result.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +73,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				69F73ECB1FF43E4D00E2DD85 /* ReactiveSwift.framework in Frameworks */,
-				69F73ECC1FF43E4D00E2DD85 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

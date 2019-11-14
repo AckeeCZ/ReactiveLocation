@@ -1,6 +1,5 @@
 import CoreLocation
 import ReactiveSwift
-import Result
 
 public typealias LocationManagerConfigureBlock = (CLLocationManager) -> Void
 
@@ -183,7 +182,7 @@ public class ReactiveLocation: ReactiveLocationService {
         }
         
         let cl = ReactiveLocation.LocationManagerConfigureBlock()
-        return SignalProducer<CLAuthorizationStatus, NoError> { sink, dis in
+        return SignalProducer<CLAuthorizationStatus, Never> { sink, dis in
             
             sink.send(value: CLLocationManager.authorizationStatus())
             sink.sendCompleted()
@@ -234,7 +233,7 @@ public class ReactiveLocation: ReactiveLocationService {
 
     static private func regionSignal(_ delegateObject: ReactiveLocationManagerDelegate, regionState: RegionEvent) -> SignalProducer<RegionEvent, LocationError> {
 
-        let signal: SignalProducer<RegionEvent, NoError>
+        let signal: SignalProducer<RegionEvent, Never>
         switch regionState {
         case .enter:
             signal = SignalProducer(delegateObject.didEnterRegion).map { .enter($0) }
