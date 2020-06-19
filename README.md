@@ -1,6 +1,6 @@
-![](Logo.png)
+![ackee|ReactiveLocation](Logo.png)
 
-[![Travis branch](https://img.shields.io/travis/AckeeCZ/ReactiveLocation/master.svg)](https://travis-ci.org/AckeeCZ/ReactiveLocation)
+![Build](https://github.com/AckeeCZ/ReactiveLocation/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/cocoapods/v/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 [![License](https://img.shields.io/cocoapods/l/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 [![Platform](https://img.shields.io/cocoapods/p/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
