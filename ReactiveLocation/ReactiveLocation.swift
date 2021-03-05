@@ -77,14 +77,21 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
         return currentValueProducer
             .then(requestPermissionProducer())
             .then(SignalProducer(locationSignal))
-            .on(started: { [weak self] in self?.observerCount += 1 },
-                terminated: { [weak self] in self?.observerCount -= 1 })
+            .on(
+                started: { [weak self] in self?.observerCount += 1 },
+                terminated: { [weak self] in self?.observerCount -= 1 }
+            )
     }
     
     public func singleLocation(timeout: TimeInterval) -> SignalProducer<CLLocation?, Never> {
-        return SignalProducer(locationSignal).map { $0 }.take(first: 1)
-            .on(started: { [weak self] in self?.observerCount += 1 },
-                terminated: { [weak self] in self?.observerCount -= 1 })
+        let currentValueProducer = SignalProducer(value: locationManager.location).skipNil()
+        return currentValueProducer
+            .then(requestPermissionProducer())
+            .then(SignalProducer(locationSignal).map { $0 }.take(first: 1))
+            .on(
+                started: { [weak self] in self?.observerCount += 1 },
+                terminated: { [weak self] in self?.observerCount -= 1 }
+            )
             .timeout(after: timeout, raising: NSError(domain: "ReactiveLocation", code: 0, userInfo: nil), on: QueueScheduler())
             .flatMapError { _ in SignalProducer(value: nil) }
     }
