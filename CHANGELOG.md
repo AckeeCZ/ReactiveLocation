@@ -8,6 +8,11 @@
 
 ## master
 
+- Fix getting location permissions (#30)
+- Fix single location retrieve (#30)
+
+## 4.0.1
+
 - fix missing permission request for `singleLocation` (#29, kudos to @lukashromadnik)
 
 ## 4.0
