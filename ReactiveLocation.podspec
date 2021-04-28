@@ -9,7 +9,7 @@ DESC
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ackee' => 'info@ackee.cz' }
   s.source           = { :git => 'https://github.com/AckeeCZ/ReactiveLocation.git', :tag => s.version.to_s }
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.source_files = 'ReactiveLocation/*.swift'
   s.dependency 'ReactiveSwift', '~> 6.0'
   s.swift_version    = '5.0'
