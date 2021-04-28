@@ -54,6 +54,9 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
         }
     }
     
+    private let (authorizationStatusSignal, authorizationStatusObserver) = Signal<CLAuthorizationStatus, Never>.pipe()
+    private lazy var authorizationStatus = Property<CLAuthorizationStatus>(initial: CLLocationManager.authorizationStatus(), then: authorizationStatusSignal)
+    
     private var isAuthorized: Bool {
         let status = CLLocationManager.authorizationStatus()
         return status  == .authorizedAlways || status == .authorizedWhenInUse
@@ -74,9 +77,10 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
     
     public func locationProducer() -> SignalProducer<CLLocation, Never> {
         let currentValueProducer = SignalProducer(value: locationManager.location).skipNil()
-        return currentValueProducer
-            .then(requestPermissionProducer())
-            .then(SignalProducer(locationSignal))
+        
+        return requestPermissionProducer()
+            .then(currentValueProducer)
+            .concat(SignalProducer(locationSignal))
             .on(
                 started: { [weak self] in self?.observerCount += 1 },
                 terminated: { [weak self] in self?.observerCount -= 1 }
@@ -84,16 +88,23 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
     }
     
     public func singleLocation(timeout: TimeInterval) -> SignalProducer<CLLocation?, Never> {
-        let currentValueProducer = SignalProducer(value: locationManager.location).skipNil()
-        return currentValueProducer
-            .then(requestPermissionProducer())
-            .then(SignalProducer(locationSignal).map { $0 }.take(first: 1))
+        // most recent known location
+        let currentValueProducer = SignalProducer(value: locationManager.location)
+        
+        // new location from location update or nil after timeout
+        let newValueProducer = SignalProducer(locationSignal)
+            .map { Optional($0) }
+            .take(first: 1)
+            .timeout(after: timeout, raising: NSError(domain: "ReactiveLocation", code: 0, userInfo: nil), on: QueueScheduler())
+            .flatMapError { _ in SignalProducer<CLLocation?, Never>(value: nil) }
+        
+        return requestPermissionProducer() // ask for permissions
+            .then(SignalProducer.combineLatest(currentValueProducer, newValueProducer)) // wait for current and new value
+            .map { $1 ?? $0 } // use new value if available, otherwise use current one
             .on(
                 started: { [weak self] in self?.observerCount += 1 },
                 terminated: { [weak self] in self?.observerCount -= 1 }
             )
-            .timeout(after: timeout, raising: NSError(domain: "ReactiveLocation", code: 0, userInfo: nil), on: QueueScheduler())
-            .flatMapError { _ in SignalProducer(value: nil) }
     }
     
     // MARK: - CLLocationManager delegate
@@ -103,6 +114,7 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
     }
     
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        authorizationStatusObserver.send(value: status)
         if isAuthorized && observerCount > 0 {
             manager.startUpdatingLocation()
         }
@@ -111,16 +123,11 @@ public final class ReactiveLocation: NSObject, ReactiveLocationService, CLLocati
     // MARK: - Private helpers
     
     private func requestPermissionProducer() -> SignalProducer<Void, Never> {
-        return SignalProducer { [weak self] observer, _ in
-            guard CLLocationManager.authorizationStatus() == .notDetermined, let locationManager = self?.locationManager else {
-                observer.send(value: ())
-                observer.sendCompleted()
-                return
-            }
-            
-            self?.requestPermission(locationManager)
-            observer.send(value: ())
-            observer.sendCompleted()
-        }
+        requestPermission(locationManager)
+        
+        return authorizationStatus.producer
+            .filter { $0 != .notDetermined }
+            .take(first: 1)
+            .map { _ in }
     }
 }
