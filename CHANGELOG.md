@@ -8,6 +8,8 @@
 
 ## master
 
+## 4.0.2
+
 - Fix getting location permissions (#30)
 - Fix single location retrieve (#30)
 
