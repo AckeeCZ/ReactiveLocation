@@ -21,4 +21,4 @@ jobs:
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: | 
-          carthage build --no-skip-current --platform iOS --cache-builds
+          carthage build --no-skip-current --platform iOS --cache-builds --use-xcframeworks
