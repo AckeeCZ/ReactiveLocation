@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,6 @@
 		69B0E54B2209FCCD009C5543 /* ReactiveLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B0E5492209FCCD009C5543 /* ReactiveLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69B0E5532209FD04009C5543 /* ReactiveLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0E5522209FD04009C5543 /* ReactiveLocation.swift */; };
 		69B0E5552209FEBE009C5543 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 69B0E5542209FEBE009C5543 /* Cartfile */; };
-		69B0E5592209FF49009C5543 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5572209FF49009C5543 /* ReactiveSwift.framework */; };
 		69B0E562220A08B8009C5543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0E561220A08B8009C5543 /* AppDelegate.swift */; };
 		69B0E564220A08B8009C5543 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0E563220A08B8009C5543 /* LocationViewController.swift */; };
 		69B0E567220A08B8009C5543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B0E565220A08B8009C5543 /* Main.storyboard */; };
@@ -23,6 +22,8 @@
 		69B0E577220A0BA5009C5543 /* ReactiveLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5462209FCCD009C5543 /* ReactiveLocation.framework */; };
 		69B0E578220A0BA5009C5543 /* ReactiveLocation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69B0E5462209FCCD009C5543 /* ReactiveLocation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		69B0E57D220A14E0009C5543 /* BetterLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0E57C220A14E0009C5543 /* BetterLocationManager.swift */; };
+		69E1C63028C62A61000AEC82 /* ReactiveSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E1C62F28C62A61000AEC82 /* ReactiveSwift.xcframework */; };
+		69E1C63128C62A61000AEC82 /* ReactiveSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69E1C62F28C62A61000AEC82 /* ReactiveSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				69B0E578220A0BA5009C5543 /* ReactiveLocation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69E1C63228C62A61000AEC82 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				69E1C63128C62A61000AEC82 /* ReactiveSwift.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +80,7 @@
 		69B0E573220A0A97009C5543 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
 		69B0E575220A0B46009C5543 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		69B0E57C220A14E0009C5543 /* BetterLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterLocationManager.swift; sourceTree = "<group>"; };
+		69E1C62F28C62A61000AEC82 /* ReactiveSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ReactiveSwift.xcframework; path = Carthage/Build/ReactiveSwift.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69B0E5592209FF49009C5543 /* ReactiveSwift.framework in Frameworks */,
+				69E1C63028C62A61000AEC82 /* ReactiveSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +149,7 @@
 		69B0E5562209FF49009C5543 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69E1C62F28C62A61000AEC82 /* ReactiveSwift.xcframework */,
 				69B0E575220A0B46009C5543 /* ReactiveCocoa.framework */,
 				69B0E5572209FF49009C5543 /* ReactiveSwift.framework */,
 				69B0E5582209FF49009C5543 /* Result.framework */,
@@ -178,6 +192,7 @@
 				69B0E5422209FCCD009C5543 /* Sources */,
 				69B0E5432209FCCD009C5543 /* Frameworks */,
 				69B0E5442209FCCD009C5543 /* Resources */,
+				69E1C63228C62A61000AEC82 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
