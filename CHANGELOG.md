@@ -8,6 +8,10 @@
 
 ## master
 
+## 4.1.0
+
+- Update dependencies (#33)
+
 ## 4.0.2
 
 - Fix getting location permissions (#30)
