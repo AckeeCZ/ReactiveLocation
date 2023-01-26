@@ -8,6 +8,10 @@
 
 ## master
 
+## 4.2.0
+
+- Update dependencies
+
 ## 4.1.0
 
 - Update dependencies (#33)
