@@ -6,30 +6,29 @@ on:
     - '*'
 
 jobs:
-#   carthage:
-#     name: Upload Carthage binary 
-#     runs-on: macos-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - uses: AckeeCZ/load-xcode-version@1.0
-#       - uses: actions/cache@v1
-#         with:
-#           path: Carthage
-#           key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
-#           restore-keys: |
-#             ${{ runner.os }}-carthage-
-#       - name: Build
-#         run: carthage build --no-skip-current --cache-builds
-#       - name: Archive
-#         run: carthage archive ReactiveLocation
-#       - uses: xresloader/upload-to-github-release@v1
-#         if: startsWith(github.ref, 'refs/tags/')
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         with:
-#           file: ReactiveLocation.framework.zip
-#           tags: true
-#           draft: false
+  carthage:
+    name: Upload Carthage binary 
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: AckeeCZ/load-xcode-version@1.0
+      - name: Build
+        run: carthage build --no-skip-current --cache-builds --use-xcframeworks
+      - name: Archive
+        run: | 
+          DST=$PWD
+          mkdir -p /tmp/ReactiveLocation
+          mv Carthage/Build/*.xcframework /tmp/ReactiveLocation
+          cd /tmp
+          zip -r "$DST/"ReactiveLocation.xcframework.zip ReactiveLocation
+      - uses: xresloader/upload-to-github-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          file: ReactiveLocation.xcframework.zip
+          tags: true
+          draft: false
   cocoapods:
     name: Push podspec to Cocoapods trunk
     runs-on: macos-latest
