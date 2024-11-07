@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 [![Platform](https://img.shields.io/cocoapods/p/ReactiveLocation.svg?style=flat)](http://cocoapods.org/pods/ReactiveLocation)
 
+> ⚠️ **This repository is no longer maintained**
+
 ## ReactiveSwift wrapper to observe location
 
 Our wrapper automatically asks for permission. It determines what kind of permission your app requires by checking the Info.plist of your app.
